@@ -9,6 +9,7 @@ import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import type { DefaultSession } from "next-auth";
+import { FiHeart } from "react-icons/fi";
 
 declare module "next-auth" {
   interface Session {
