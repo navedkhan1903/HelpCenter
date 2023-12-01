@@ -5,11 +5,12 @@ import User from "@/models/userModel";
 export async function POST(req: NextRequest) {
   try {
     await connect();
-    const { id, name, email } = await req.json();
+    const { id, name, email, pass } = await req.json();
     const user = await User.findById(id);
 
     user.name = name;
     user.email = email;
+    user.pass = pass;
     await user.save();
 
     return NextResponse.json(

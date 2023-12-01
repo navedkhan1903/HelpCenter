@@ -14,8 +14,8 @@ export default function InfoInput({
   disabled,
 }: Props) {
   return (
-    <>
-      <p className="mt-10 pb-1 text-sm font-medium text-gray">{label}</p>
+    <div>
+      <p className="mt-10 pb-1 text-sm font-medium text-darkGray">{label}</p>
       <input
         disabled={disabled}
         type={type}
@@ -23,8 +23,8 @@ export default function InfoInput({
         onChange={onChange}
         className={`${
           disabled ? "cursor-not-allowed" : ""
-        } w-72 rounded-md border-2 border-lightGray px-3 py-3 text-sm font-medium text-darkGray outline-none duration-200 focus:border-gray`}
+        } w-[280px] rounded-md border-2 border-lightGray px-3 py-3 text-sm font-medium text-darkGray outline-none duration-200 focus:border-gray`}
       />
-    </>
+    </div>
   );
 }

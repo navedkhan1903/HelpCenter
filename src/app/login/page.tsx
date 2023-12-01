@@ -1,12 +1,7 @@
 import LoginClient from "./LoginClient";
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
 import AuthContainer from "@/components/auth/AuthContainer";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 
-export default async function Login() {
-  if (await getServerSession(authOptions)) redirect("/");
-
+export default function Login() {
   return (
     <AuthContainer
       label="Login to HelpCenter!"

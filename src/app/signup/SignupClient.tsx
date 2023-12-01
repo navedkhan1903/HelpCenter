@@ -35,10 +35,7 @@ export default function LoginClient() {
     else if (!email) setErr("Please provide an email address");
     else if (!/^\S+@\S+\.\S+$/.test(email)) setErr("Invalid Email Address");
     else if (!pass) setErr("Please provide a password");
-    else if (
-      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{10,}$/.test(pass)
-    )
-      setErr("Password is too weak");
+    else if (pass.length < 10) setErr("Password is too short");
     else {
       setErr("");
       return true;
@@ -58,7 +55,7 @@ export default function LoginClient() {
         });
         if (res!.error) throw new Error(res!.error);
         setSuccess(true);
-        router.push("/");
+        router.replace("/");
       } catch (err: any) {
         setErr(err.response.data.message);
         setLoading(false);

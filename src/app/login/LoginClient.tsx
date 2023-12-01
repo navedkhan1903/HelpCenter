@@ -48,7 +48,7 @@ export default function LoginClient() {
         });
         if (res!.error) throw new Error(res!.error);
         setSuccess(true);
-        router.push("/");
+        router.replace("/");
       } catch (err: any) {
         setLoading(false);
         setErr(err.message);
