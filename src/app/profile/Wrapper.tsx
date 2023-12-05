@@ -2,7 +2,7 @@ import { MdOutlineEdit } from "react-icons/md";
 
 interface Props {
   label: string;
-  children: JSX.Element;
+  children: JSX.Element | null;
   onEdit: () => void;
   onSave: () => void;
   onCancel: () => void;
