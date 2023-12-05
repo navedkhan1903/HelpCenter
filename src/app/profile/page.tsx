@@ -9,14 +9,16 @@ export default async function Profile({
   searchParams?: { edit?: string };
 }) {
   return (
-    <div className="mx-auto w-8/12 translate-y-[77px] pb-10">
-      <p className="my-10 text-3xl font-semibold text-darkGray">My Profile</p>
-      <div className="flex min-h-[500px] rounded-3xl border-[1px] border-lightGray p-10 shadow-sm">
-        <ProfileNav />
-        {(Object.keys(searchParams!).length === 0 ||
-          searchParams?.edit === "info") && <Info />}
-        {searchParams?.edit === "address" && <Address />}
+    <Session status="authenticated" path="/login">
+      <div className="mx-auto w-8/12 translate-y-[77px] pb-10">
+        <p className="my-10 text-3xl font-semibold text-darkGray">My Profile</p>
+        <div className="flex min-h-[500px] rounded-3xl border-[1px] border-lightGray p-10 shadow-sm">
+          <ProfileNav />
+          {/* {(Object.keys(searchParams!).length === 0 ||
+            searchParams?.edit === "info") && <Info />}
+          {searchParams?.edit === "address" && <Address />} */}
+        </div>
       </div>
-    </div>
+    </Session>
   );
 }
