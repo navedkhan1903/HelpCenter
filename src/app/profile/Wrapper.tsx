@@ -1,5 +1,4 @@
 import { MdOutlineEdit } from "react-icons/md";
-import { IoMdClose, IoMdCheckmark } from "react-icons/io";
 
 interface Props {
   label: string;

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { FiMail } from "react-icons/fi";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import AuthBtn from "@/components/auth/AuthBtn";
 import AuthError from "@/components/auth/AuthError";
 import AuthInput from "@/components/auth/AuthInput";
@@ -23,8 +22,6 @@ export default function LoginClient() {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState("");
   const [success, setSuccess] = useState(false);
-
-  const router = useRouter();
 
   function validate() {
     if (!email) setErr("Please provide an email address");
@@ -48,7 +45,6 @@ export default function LoginClient() {
         });
         if (res!.error) throw new Error(res!.error);
         setSuccess(true);
-        router.replace("/");
       } catch (err: any) {
         setLoading(false);
         setErr(err.message);
