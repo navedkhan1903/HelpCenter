@@ -1,10 +1,10 @@
 import LoginClient from "./LoginClient";
+import Session from "../../components/Session";
 import AuthContainer from "@/components/auth/AuthContainer";
-import LoginSession from "./LoginSession";
 
 export default function Login() {
   return (
-    <LoginSession>
+    <Session status="unauthenticated" path="/">
       <AuthContainer
         label="Login to HelpCenter!"
         footerText="Don't have an account?"
@@ -13,6 +13,6 @@ export default function Login() {
       >
         <LoginClient />
       </AuthContainer>
-    </LoginSession>
+    </Session>
   );
 }

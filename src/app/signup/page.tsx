@@ -1,20 +1,18 @@
 import SignupClient from "./SignupClient";
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
+import Session from "@/components/Session";
 import AuthContainer from "@/components/auth/AuthContainer";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 
-export default async function Signup() {
-  if (await getServerSession(authOptions)) redirect("/");
-
+export default function Signup() {
   return (
-    <AuthContainer
-      label="Register Now!"
-      footerText="Already have an account?"
-      link="/login"
-      footerLabel="Login"
-    >
-      <SignupClient />
-    </AuthContainer>
+    <Session status="unauthenticated" path="/">
+      <AuthContainer
+        label="Register Now!"
+        footerText="Already have an account?"
+        link="/login"
+        footerLabel="Login"
+      >
+        <SignupClient />
+      </AuthContainer>
+    </Session>
   );
 }
