@@ -18,6 +18,13 @@ import kuldeep from "../../public/kuldeep.jpeg";
 import google from "../../public/google.png";
 import facebook from "../../public/facebook.png";
 
+import tech from "../../public/tech.jpg";
+import cleaning from "../../public/cleaning.jpg";
+import garden from "../../public/garden.jpg";
+import handyman from "../../public/handyman.jpg";
+import home_improvement from "../../public/home_improvement.jpg";
+import maintainance from "../../public/maintainance.jpg";
+
 import { LuUser2 } from "react-icons/lu";
 import {
   IoLocationOutline,
@@ -96,6 +103,7 @@ export const services = [
     quality: 5,
     ratingCount: "4.9k",
     rating: 5,
+    href: "home-services",
   },
   {
     image: laundary,
@@ -104,6 +112,7 @@ export const services = [
     quality: 11,
     ratingCount: "2.7k",
     rating: 4,
+    href: "laundry-services",
   },
   {
     image: learning,
@@ -112,6 +121,7 @@ export const services = [
     quality: 22,
     ratingCount: "8.2k",
     rating: 5,
+    href: "tuition-services",
   },
   {
     image: beauty,
@@ -120,6 +130,7 @@ export const services = [
     quality: 32,
     ratingCount: "5.6k",
     rating: 4,
+    href: "beauty-services",
   },
   {
     image: event,
@@ -128,6 +139,7 @@ export const services = [
     quality: 4,
     ratingCount: "2.3k",
     rating: 5,
+    href: "event-services",
   },
   {
     image: grocery,
@@ -136,6 +148,7 @@ export const services = [
     quality: 13,
     ratingCount: "6.2k",
     rating: 4,
+    href: "grocery-services",
   },
   {
     image: mechanic,
@@ -144,6 +157,7 @@ export const services = [
     quality: 41,
     ratingCount: "1.5k",
     rating: 5,
+    href: "vehicle-services",
   },
 ];
 
@@ -277,27 +291,80 @@ export const notifications = [
 
 export const profileNav = [
   {
-    label: "Personal Information",
     icon: <LuUser2 size={18} />,
     state: [true, false, false, false],
     url: "info",
   },
   {
-    label: "Manage Addresses",
     icon: <IoLocationOutline size={18} />,
     state: [false, true, false, false],
     url: "address",
   },
   {
-    label: "Saved UPI",
     icon: <IoPhonePortraitOutline size={18} />,
     state: [false, false, true, false],
     url: "upi",
   },
   {
-    label: "Saved Cards",
     icon: <IoCardOutline size={18} />,
     state: [false, false, false, true],
     url: "cards",
+  },
+];
+
+export const homeServices = [
+  {
+    image: cleaning,
+    title: "Cleaning Services",
+    desc: "Carpet Cleaning | Deep Cleaning | House Cleaning | Window Cleaning",
+    quality: 48,
+    ratingCount: "4.9k",
+    rating: 5,
+    href: "home-services/cleaning",
+  },
+  {
+    image: garden,
+    title: "Lawn and Garden Services",
+    desc: "Garden Maintenance | Lawn Mowing | Landscaping | Tree Trimming",
+    quality: 10,
+    ratingCount: "4.9k",
+    rating: 5,
+    href: "home-services/gardening",
+  },
+  {
+    image: handyman,
+    title: "Handyman Services",
+    desc: "Carpentry | Drywall Repair | Furniture Assembly | Painting",
+    quality: 27,
+    ratingCount: "4.9k",
+    rating: 5,
+    href: "home-services/handyman",
+  },
+  {
+    image: home_improvement,
+    title: "Home Improvement Services",
+    desc: "Bathroom Remodeling | Flooring Installation | Kitchen Renovation | Roofing Services",
+    quality: 19,
+    ratingCount: "4.9k",
+    rating: 5,
+    href: "home-services/home-improvement",
+  },
+  {
+    image: maintainance,
+    title: "Maintenance Services",
+    desc: "Appliance Repairs | Electrical Repairs | HVAC Services | Plumbing",
+    quality: 19,
+    ratingCount: "4.9k",
+    rating: 5,
+    href: "home-services/maintainance",
+  },
+  {
+    image: tech,
+    title: "Tech Services",
+    desc: "Computer Repair | Home Network Setup | Smart Home Device Installation",
+    quality: 9,
+    ratingCount: "4.9k",
+    rating: 5,
+    href: "home-services/tech",
   },
 ];

@@ -3,19 +3,27 @@
 import Lines from "./Lines";
 import Link from "next/link";
 import Mobile from "./Mobile";
-import { useState } from "react";
 import Dropdown from "./Dropdown";
-import { BiBell } from "react-icons/bi";
+import { auth } from "@/utils/firebase";
+import type { User } from "firebase/auth";
 import NavItem from "@/app/navBar/NavItem";
-import { useSession } from "next-auth/react";
+import { useState, useEffect } from "react";
+import { AiOutlineUser } from "react-icons/ai";
+import { onAuthStateChanged } from "firebase/auth";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function NavBar() {
   const [dropdown, setDropdown] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
 
-  const session = useSession();
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) setUser(user);
+      else setUser(null);
+    });
+  }, []);
 
   return (
     <div className="fixed top-0 z-10 w-full border-b-2 border-neutral-100 bg-white py-5 text-sm font-semibold">
@@ -45,26 +53,23 @@ export default function NavBar() {
           <NavItem title="Sell your services" />
         </div>
 
-        {session.data && (
-          <div className="absolute right-[8vw] flex items-center gap-3">
-            <div className="cursor-pointer rounded-full p-3 text-gray duration-200 hover:bg-primaryLight hover:text-darkGray">
-              <BiBell size={20} />
-            </div>
-            <div
+        {user ? (
+          <div
+            className="absolute right-[8vw] flex h-[68px] w-48 items-center justify-end"
+            onMouseLeave={() => setDropdown(false)}
+          >
+            <button
+              className="flex gap-1 rounded-full border-[1px] border-gray px-3 py-2 text-darkGray"
               onMouseEnter={() => setDropdown(true)}
-              onMouseLeave={() => setDropdown(false)}
             >
-              <div className="my-3 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full bg-primary text-lg font-semibold text-darkGray">
-                {session.data.user?.name?.[0]}
-              </div>
-            </div>
+              <AiOutlineUser size={18} />
+              You
+            </button>
           </div>
-        )}
-
-        {session.status === "unauthenticated" && (
+        ) : (
           <Link
             href="/login"
-            className="absolute right-[8vw] cursor-pointer rounded-md bg-primary px-6 py-3 text-center text-darkGray duration-200 hover:bg-primaryDark active:animate-primaryBtnAnimation"
+            className="absolute right-[8vw] rounded-md bg-primary px-6 py-3 text-center text-darkGray duration-200 hover:bg-primaryDark"
           >
             Login
           </Link>

@@ -1,6 +1,6 @@
+import User from "@/models/userModel";
 import { connect } from "@/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
-import User from "@/models/userModel";
 
 export async function POST(req: NextRequest) {
   try {
@@ -13,12 +13,7 @@ export async function POST(req: NextRequest) {
     user.pass = pass;
     await user.save();
 
-    return NextResponse.json(
-      {
-        message: "Personal Information Updated Successfully",
-      },
-      { status: 200 },
-    );
+    return NextResponse.json({ message: "Changes Saved" }, { status: 200 });
   } catch (err: any) {
     return NextResponse.json({ message: err.message }, { status: 500 });
   }

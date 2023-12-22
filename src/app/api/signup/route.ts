@@ -1,27 +1,15 @@
-import bcryptjs from "bcryptjs";
 import User from "@/models/userModel";
 import { connect } from "@/dbConfig/dbConfig";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
     await connect();
-    const { name, email, pass } = await request.json();
-    const user = await User.findOne({ email });
-
-    if (user) {
-      return NextResponse.json(
-        { message: "Email already in use" },
-        { status: 400 },
-      );
-    }
-
-    const salt = await bcryptjs.genSalt(10);
-    const hashedPass = await bcryptjs.hash(pass, salt);
-    await new User({ name: name, email: email, pass: hashedPass }).save();
+    const { uid, name, email } = await req.json();
+    await new User({ uid: uid, name: name, email: email }).save();
 
     return NextResponse.json(
-      { message: "Sign in successful" },
+      { message: "Sign up successful" },
       { status: 201 },
     );
   } catch (err: any) {

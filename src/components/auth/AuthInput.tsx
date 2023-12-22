@@ -1,12 +1,9 @@
 import { ReactNode } from "react";
 
 interface Props {
-  isSelected: boolean;
   icon: ReactNode;
   type: string;
   placeholder: string;
-  onFocus: () => void;
-  onBlur: () => void;
   onChange: (event: React.FocusEvent<HTMLInputElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   isVisible?: ReactNode;
@@ -14,35 +11,29 @@ interface Props {
 }
 
 export default function AuthInput({
-  isSelected,
   icon,
   type,
   placeholder,
-  onFocus,
-  onBlur,
   onChange,
   onKeyDown,
   isVisible,
   onToggleVisibility,
 }: Props) {
   return (
-    <div
-      className={`${
-        isSelected ? "border-gray" : "border-neutral-100"
-      } mb-3 flex items-center rounded-md border-2 px-5 duration-200`}
-    >
-      {icon}
+    <div className="relative mb-3">
+      <div className="absolute left-5 top-1/2 -translate-y-1/2">{icon}</div>
       <input
         type={type}
         placeholder={placeholder}
-        onFocus={onFocus}
-        onBlur={onBlur}
         onChange={onChange}
         onKeyDown={onKeyDown}
-        className="mx-3 w-56 py-3 text-sm font-medium text-darkGray placeholder-gray focus:outline-none"
+        className="w-full rounded-md border-2 border-neutral-100 px-12 py-3 text-sm font-medium placeholder-gray outline-none duration-200 focus:border-gray"
       />
       {isVisible ? (
-        <div className="cursor-pointer" onClick={onToggleVisibility}>
+        <div
+          className="absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer"
+          onClick={onToggleVisibility}
+        >
           {isVisible}
         </div>
       ) : null}

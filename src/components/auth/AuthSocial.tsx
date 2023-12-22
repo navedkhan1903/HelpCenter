@@ -11,9 +11,9 @@ export default function AuthSocial() {
       </div>
       <div className="flex justify-between gap-5 text-sm font-medium text-darkGray">
         {socialLogin.map((item, i) => (
-          <div
+          <button
             key={i}
-            className="flex flex-1 cursor-pointer justify-center gap-3 rounded-md border-2 border-neutral-100 px-5 py-3 duration-200 hover:bg-neutral-100 active:animate-socialBtnAnimation"
+            className="flex flex-1 justify-center gap-3 rounded-md border-2 border-neutral-100 px-5 py-3 duration-200 hover:bg-neutral-100"
           >
             <div>
               <Image
@@ -26,7 +26,7 @@ export default function AuthSocial() {
               />
             </div>
             {item.name}
-          </div>
+          </button>
         ))}
       </div>
     </>

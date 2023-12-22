@@ -1,5 +1,5 @@
 import { BiCopyright } from "react-icons/bi";
-import FooterItem from "@/app/main/footer/FooterItem";
+import FooterItem from "@/components/footer/FooterItem";
 
 export default function Footer() {
   return (

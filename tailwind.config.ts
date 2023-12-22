@@ -19,20 +19,6 @@ const config: Config = {
       boxShadow: {
         sm: "0px 8px 24px rgba(149, 157, 165, 0.1)",
       },
-      keyframes: {
-        primaryBtnClick: {
-          "0%, 100%": { backgroundColor: "#ffc94d" },
-          "50%": { backgroundColor: "#FFD369" },
-        },
-        socialBtnClick: {
-          "0%, 100%": { backgroundColor: "#f5f5f5" },
-          "50%": { backgroundColor: "white" },
-        },
-      },
-      animation: {
-        primaryBtnAnimation: "primaryBtnClick 200ms",
-        socialBtnAnimation: "socialBtnClick 200ms",
-      },
     },
   },
   plugins: [],

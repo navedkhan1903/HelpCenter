@@ -1,9 +1,12 @@
 import Reveal from "@/components/Reveal";
-import { testimonials } from "@/utils/data";
+import Testimonial from "./Testimonial";
 import SectionHeading from "@/components/SectionHeading";
-import Testimonial from "@/app/main/testimonials/Testimonial";
 
-export default function Testimonials() {
+export default async function Testimonials() {
+  const res = await fetch(`${process.env.URL}/api/testimonials`, {
+    cache: "no-cache",
+  }).then((res) => res.json());
+
   return (
     <div className="mx-auto mb-40 w-10/12">
       <Reveal delay={0}>
@@ -12,15 +15,7 @@ export default function Testimonials() {
           subTitle="Explore what people say about us"
         />
       </Reveal>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {testimonials.map((testimonial, i) => (
-          <div key={i} className="md:last:hidden lg:last:block">
-            <Reveal delay={i * 0.1}>
-              <Testimonial {...testimonial} />
-            </Reveal>
-          </div>
-        ))}
-      </div>
+      <Testimonial res={res} />
     </div>
   );
 }

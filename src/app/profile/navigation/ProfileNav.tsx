@@ -19,7 +19,6 @@ export default function ProfileNav() {
       {profileNav.map((item, i) => (
         <ProfileItem
           key={i}
-          label={item.label}
           icon={item.icon}
           onClick={() => handleParams(item.url)}
           isSelected={

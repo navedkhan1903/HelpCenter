@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import { FiMail } from "react-icons/fi";
-import { signIn } from "next-auth/react";
+import { auth } from "@/utils/firebase";
 import AuthBtn from "@/components/auth/AuthBtn";
-import AuthError from "@/components/auth/AuthError";
+import toast, { Toaster } from "react-hot-toast";
+import { validateLogin } from "@/utils/functions";
 import AuthInput from "@/components/auth/AuthInput";
-import AuthSuccess from "@/components/auth/AuthSuccess";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import {
   AiOutlineKey,
   AiOutlineEye,
@@ -15,65 +16,38 @@ import {
 
 export default function LoginClient() {
   const [passVisible, setPassVisible] = useState(false);
-  const [passSelected, setPassSelected] = useState(false);
-  const [emailSelected, setEmailSelected] = useState(false);
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [loading, setLoading] = useState(false);
-  const [err, setErr] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  function validate() {
-    if (!email) setErr("Please provide an email address");
-    else if (!pass) setErr("Please provide a password");
-    else if (!/^\S+@\S+\.\S+$/.test(email)) setErr("Invalid Email Address");
-    else {
-      setErr("");
-      return true;
-    }
-    return false;
-  }
 
   async function handleLogin() {
-    if (validate()) {
+    setLoading(true);
+    if (validateLogin(email, pass)) {
       try {
-        setLoading(true);
-        const res = await signIn("credentials", {
-          email,
-          pass,
-          redirect: false,
-        });
-        if (res!.error) throw new Error(res!.error);
-        setSuccess(true);
+        await signInWithEmailAndPassword(auth, email, pass);
       } catch (err: any) {
-        setLoading(false);
-        setErr(err.message);
+        if (err.code === "auth/invalid-credential")
+          toast.error("Invalid Email or Password");
+        else toast.error("Login Failed");
       }
     }
+    setLoading(false);
   }
 
   return (
     <>
-      {err && <AuthError message={err} />}
-      {success && <AuthSuccess message="Login Successful. Redirecting" />}
-
+      <Toaster position="top-center" />
       <AuthInput
-        isSelected={emailSelected}
         icon={<FiMail color="#767676" size="18" />}
         type="email"
         placeholder="Email"
-        onFocus={() => setEmailSelected(true)}
-        onBlur={() => setEmailSelected(false)}
         onChange={(event) => setEmail(event.target.value)}
       />
 
       <AuthInput
-        isSelected={passSelected}
         icon={<AiOutlineKey color="#767676" size="18" />}
         type={passVisible ? "text" : "password"}
         placeholder="Password"
-        onFocus={() => setPassSelected(true)}
-        onBlur={() => setPassSelected(false)}
         onChange={(event) => setPass(event.target.value)}
         onKeyDown={(event) => {
           if (event.key === "Enter") handleLogin();
@@ -88,9 +62,9 @@ export default function LoginClient() {
         onToggleVisibility={() => setPassVisible(!passVisible)}
       />
 
-      <p className="mb-5 ml-auto cursor-pointer justify-end text-sm font-semibold text-sky-700">
+      <button className="mb-5 ml-auto justify-end text-sm font-semibold text-sky-700">
         Forgot Password?
-      </p>
+      </button>
 
       <AuthBtn loading={loading} label="Login" onClick={handleLogin} />
     </>
