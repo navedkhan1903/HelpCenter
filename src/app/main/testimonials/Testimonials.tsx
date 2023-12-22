@@ -2,10 +2,10 @@ import Reveal from "@/components/Reveal";
 import Testimonial from "./Testimonial";
 import SectionHeading from "@/components/SectionHeading";
 
-export default async function Testimonials() {
-  const res = await fetch(`${process.env.URL}/api/testimonials`, {
-    cache: "no-cache",
-  }).then((res) => res.json());
+export default function Testimonials() {
+  // const res = await fetch(`${process.env.URL}/api/testimonials`, {
+  //   cache: "no-cache",
+  // }).then((res) => res.json());
 
   return (
     <div className="mx-auto mb-40 w-10/12">
