@@ -15,13 +15,13 @@ export default function HomeServices() {
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 place-items-center gap-7 md:grid-cols-3">
-          {homeServices.map((service, i) => (
-            <Reveal delay={i * 0.1} key={i}>
-              <ServiceCard {...service} />
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={0.1}>
+          <div className="grid grid-cols-1 place-items-center gap-7 md:grid-cols-3">
+            {homeServices.map((service, i) => (
+              <ServiceCard key={i} {...service} />
+            ))}
+          </div>
+        </Reveal>
       </div>
       <Footer />
     </>

@@ -25,6 +25,10 @@ import handyman from "../../public/handyman.jpg";
 import home_improvement from "../../public/home_improvement.jpg";
 import maintainance from "../../public/maintainance.jpg";
 
+import appliance_cleaning from "../../public/appliance_cleaning.jpg";
+import carpet_cleaning from "../../public/carpet_cleaning.jpg";
+import house_cleaning from "../../public/house_cleaning.jpg";
+
 import { LuUser2 } from "react-icons/lu";
 import {
   IoLocationOutline,
@@ -316,7 +320,7 @@ export const homeServices = [
   {
     image: cleaning,
     title: "Cleaning Services",
-    desc: "Carpet Cleaning | Deep Cleaning | House Cleaning | Window Cleaning",
+    desc: "Appliance Cleaning | Carpet Cleaning | House Cleaning",
     quality: 48,
     ratingCount: "4.9k",
     rating: 5,
@@ -325,7 +329,7 @@ export const homeServices = [
   {
     image: garden,
     title: "Lawn and Garden Services",
-    desc: "Garden Maintenance | Lawn Mowing | Landscaping | Tree Trimming",
+    desc: "Garden Maintenance | Lawn Mowing | Landscaping",
     quality: 10,
     ratingCount: "4.9k",
     rating: 5,
@@ -334,7 +338,7 @@ export const homeServices = [
   {
     image: handyman,
     title: "Handyman Services",
-    desc: "Carpentry | Drywall Repair | Furniture Assembly | Painting",
+    desc: "Carpentry | Drywall Repair | Furniture Assembly",
     quality: 27,
     ratingCount: "4.9k",
     rating: 5,
@@ -343,7 +347,7 @@ export const homeServices = [
   {
     image: home_improvement,
     title: "Home Improvement Services",
-    desc: "Bathroom Remodeling | Flooring Installation | Kitchen Renovation | Roofing Services",
+    desc: "Bathroom Remodeling | Flooring Installation | Kitchen Renovation",
     quality: 19,
     ratingCount: "4.9k",
     rating: 5,
@@ -352,7 +356,7 @@ export const homeServices = [
   {
     image: maintainance,
     title: "Maintenance Services",
-    desc: "Appliance Repairs | Electrical Repairs | HVAC Services | Plumbing",
+    desc: "Appliance Repairs | Electrical Repairs | HVAC Services",
     quality: 19,
     ratingCount: "4.9k",
     rating: 5,
@@ -366,5 +370,53 @@ export const homeServices = [
     ratingCount: "4.9k",
     rating: 5,
     href: "home-services/tech",
+  },
+];
+
+export const cleaningServices = [
+  {
+    title: "Appliance Cleaning",
+    image: appliance_cleaning,
+    quality: 3,
+    price: "₹150",
+    rating: 4,
+    ratingCount: "100",
+    services: [
+      "Refrigerator Deep Cleaning",
+      "Oven and Stove-Top Cleaning",
+      "Dishwasher Maintenance",
+      "Microwave Interior Cleaning",
+      "Washing Machine Drum Clean-Up",
+    ],
+  },
+  {
+    title: "Carpet Cleaning",
+    image: carpet_cleaning,
+    quality: 3,
+    price: "₹499",
+    rating: 5,
+    ratingCount: "200",
+    services: [
+      "Deep Carpet Steam Cleaning",
+      "Spot and Stain Removal",
+      "Carpet Shampooing",
+      "Carpet Deodorizing",
+      "Carpet Protection Treatment",
+    ],
+  },
+  {
+    title: "House Cleaning",
+    image: house_cleaning,
+    quality: 43,
+    price: "₹599",
+    rating: 3,
+    ratingCount: "400",
+    services: [
+      "Regular House Cleaning",
+      "Deep Cleaning",
+      "Kitchen Cleaning",
+      "Bathroom Cleaning",
+      "Window and Blind Cleaning",
+    ],
   },
 ];
