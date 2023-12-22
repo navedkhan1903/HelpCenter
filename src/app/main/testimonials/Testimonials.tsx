@@ -15,7 +15,7 @@ export default async function Testimonials() {
           subTitle="Explore what people say about us"
         />
       </Reveal>
-      <Testimonial res={res} />
+      {/* <Testimonial res={res} /> */}
     </div>
   );
 }
