@@ -6,7 +6,7 @@ interface Props {
   placeholder: string;
   label: string;
   loading: Boolean;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export default function CustomInput({

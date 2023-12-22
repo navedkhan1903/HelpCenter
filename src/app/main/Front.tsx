@@ -25,7 +25,6 @@ export default function Front() {
         </p>
         <CustomInput
           loading={false}
-          onClick={() => console.log("hello")}
           icon={<HiMagnifyingGlass color="#767676" size="18" />}
           placeholder="Search Services"
           label="Find Service"
