@@ -8,6 +8,7 @@ export default function Info() {
 
   return (
     <Wrapper
+      loading={false}
       label="Manage Addresses"
       onEdit={() => setDisabled(false)}
       onSave={() => {}}
