@@ -32,7 +32,7 @@ export default function ServiceCard({
           alt={title}
           sizes="100vw"
           quality={quality}
-          loading="eager"
+          priority={true}
         />
         <p className="mt-3 text-xl font-semibold text-darkGray">{title}</p>
         <p className="text-sm font-medium text-gray">{desc}</p>

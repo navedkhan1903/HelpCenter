@@ -27,7 +27,7 @@ export default function Cleaning() {
                 height={400}
                 alt={service.title}
                 sizes="100vw"
-                loading="eager"
+                priority={true}
               />
               <div className="p-7">
                 <p className="text-xl font-semibold text-darkGray">
