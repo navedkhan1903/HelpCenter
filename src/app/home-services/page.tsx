@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { homeServices } from "@/utils/data";
+import home from "../../../public/home.jpg";
 import Footer from "@/components/footer/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
@@ -15,10 +16,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: title,
     description: desc,
+    images: [{ url: home.src }],
   },
   twitter: {
     title: title,
     description: desc,
+    images: [home.src],
   },
 };
 
