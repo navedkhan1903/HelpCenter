@@ -51,7 +51,6 @@ export default function Cleaning() {
                 src={service.image}
                 quality={service.quality}
                 width={400}
-                height={400}
                 alt={service.title}
                 sizes="100vw"
                 priority={true}

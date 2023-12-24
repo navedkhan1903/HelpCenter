@@ -29,7 +29,6 @@ export default function ServiceCard({
           className="rounded-t-3xl"
           src={image}
           width={400}
-          height={400}
           alt={title}
           sizes="100vw"
           quality={quality}
