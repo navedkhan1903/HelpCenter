@@ -1,0 +1,3 @@
+User-Agent: *
+Disallow: 
+Sitemap: https://helpcenter-web.vercel.app/sitemap.xml
