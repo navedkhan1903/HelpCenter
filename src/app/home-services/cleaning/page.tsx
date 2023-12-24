@@ -55,6 +55,7 @@ export default function Cleaning() {
                 alt={service.title}
                 sizes="100vw"
                 priority={true}
+                placeholder="blur"
               />
               <div className="p-7">
                 <p className="text-xl font-semibold text-darkGray">

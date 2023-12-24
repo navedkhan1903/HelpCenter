@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { Suspense } from "react";
 
 interface Props {
   image: StaticImageData;
@@ -33,6 +34,7 @@ export default function ServiceCard({
           sizes="100vw"
           quality={quality}
           priority={true}
+          placeholder="blur"
         />
         <p className="mt-3 text-xl font-semibold text-darkGray">{title}</p>
         <p className="text-sm font-medium text-gray">{desc}</p>
