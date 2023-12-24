@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { homeServices } from "@/utils/data";
-import home from "../../../public/home.jpg";
+import house_cleaning from "../../../public/house_cleaning.jpg";
 import Footer from "@/components/footer/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: desc,
     images: [
       {
-        url: home.src,
+        url: house_cleaning.src,
         width: 400,
         height: 400,
       },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     title: title,
     description: desc,
-    images: [home.src],
+    images: [house_cleaning.src],
   },
 };
 
