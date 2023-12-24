@@ -4,11 +4,21 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
+const title = "HelpCenter - On-Demand Services";
+const desc =
+  "Your wish, our command! Get what you need, when you need it, with just a click. Experience convenience like never before!";
 
 export const metadata: Metadata = {
-  title: "HelpCenter - On-Demand Services",
-  description:
-    "Your wish, our command! Get what you need, when you need it, with just a click. Experience convenience like never before!",
+  title: title,
+  description: desc,
+  openGraph: {
+    title: title,
+    description: desc,
+  },
+  twitter: {
+    title: title,
+    description: desc,
+  },
 };
 
 export default function RootLayout({

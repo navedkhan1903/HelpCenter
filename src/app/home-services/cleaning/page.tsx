@@ -1,9 +1,35 @@
+import Image from "next/image";
+import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { cleaningServices } from "@/utils/data";
 import Footer from "@/components/footer/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import Image from "next/image";
+
+const title = "Cleaning Services - HelpCenter";
+const desc =
+  "Because a clean home is a happy home – and we're here to sprinkle a little joy, one spotless corner at a time!";
+
+export const metadata: Metadata = {
+  title: title,
+  description: desc,
+  openGraph: {
+    title: title,
+    description: desc,
+    images: [
+      {
+        url: "../../../../public/cleaning.jpg",
+        width: 400,
+        height: 400,
+      },
+    ],
+  },
+  twitter: {
+    title: title,
+    description: desc,
+    images: ["../../../../public/cleaning.jpg"],
+  },
+};
 
 export default function Cleaning() {
   return (
@@ -11,7 +37,7 @@ export default function Cleaning() {
       <div className="mx-auto mb-40 mt-20 w-10/12 translate-y-[77px]">
         <Reveal delay={0}>
           <SectionHeading
-            title="Cleaning Servies"
+            title="Cleaning Services"
             subTitle="Because a clean home is a happy home – and we're here to sprinkle a little joy, one spotless corner at a time!"
           />
         </Reveal>
