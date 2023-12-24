@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { homeServices } from "@/utils/data";
-import house_cleaning from "../../../public/house_cleaning.jpg";
 import Footer from "@/components/footer/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import SectionHeading from "@/components/SectionHeading";
@@ -16,18 +15,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: title,
     description: desc,
-    images: [
-      {
-        url: house_cleaning.src,
-        width: 400,
-        height: 400,
-      },
-    ],
   },
   twitter: {
     title: title,
     description: desc,
-    images: [house_cleaning.src],
   },
 };
 
