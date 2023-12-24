@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Reveal from "@/components/Reveal";
 import { cleaningServices } from "@/utils/data";
 import Footer from "@/components/footer/Footer";
+import cleaning from "../../../../public/cleaning.jpg";
 import SectionHeading from "@/components/SectionHeading";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     description: desc,
     images: [
       {
-        url: "../../../../public/cleaning.jpg",
+        url: cleaning.src,
         width: 400,
         height: 400,
       },
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     title: title,
     description: desc,
-    images: ["../../../../public/cleaning.jpg"],
+    images: [cleaning.src],
   },
 };
 
