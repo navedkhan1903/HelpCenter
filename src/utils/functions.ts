@@ -19,3 +19,7 @@ export function validateSignup(name: string, email: string, pass: string) {
   }
   return false;
 }
+
+export function capitalizeFirstLetterOfEachWord(str: string) {
+  return str.replace(/\b\w/g, (match) => match.toUpperCase());
+}

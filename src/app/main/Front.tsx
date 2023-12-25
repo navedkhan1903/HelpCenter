@@ -1,7 +1,6 @@
 import Image from "next/image";
+import Search from "@/components/Search";
 import main from "../../../public/main.jpg";
-import CustomInput from "@/components/CustomInput";
-import { HiMagnifyingGlass } from "react-icons/hi2";
 
 export default function Front() {
   return (
@@ -23,12 +22,7 @@ export default function Front() {
           Your wish, our command! Get what you need, when you need it, with just
           a click. Experience convenience like never before!
         </p>
-        <CustomInput
-          loading={false}
-          icon={<HiMagnifyingGlass color="#767676" size="18" />}
-          placeholder="Search Services"
-          label="Find Service"
-        />
+        <Search />
         <p className="mt-8 text-sm font-medium text-gray">
           Ex: Cleaner, Swiper, Electrician, AC fixing, etc.
         </p>

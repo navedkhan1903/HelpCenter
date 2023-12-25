@@ -28,22 +28,19 @@ export const metadata: Metadata = {
 export default function HomeServices() {
   return (
     <>
-      <div className="mx-auto mb-40 mt-20 w-10/12 translate-y-[77px]">
-        <Reveal delay={0}>
+      <Reveal delay={0}>
+        <div className="mx-auto mb-40 mt-20 w-10/12 translate-y-[69.71px]">
           <SectionHeading
             title="Home Services"
             subTitle="Because life's too short for household hassles – let us handle the to-dos while you focus on the ta-das!"
           />
-        </Reveal>
-
-        <Reveal delay={0.1}>
           <div className="grid grid-cols-1 place-items-center gap-7 md:grid-cols-3 md:place-items-start">
             {homeServices.map((service, i) => (
-              <ServiceCard key={i} {...service} />
+              <ServiceCard key={i} service={service} />
             ))}
           </div>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
       <Footer />
     </>
   );

@@ -15,7 +15,7 @@ export default function ServicesList() {
       <div className="flex flex-col justify-center gap-7 md:flex-row">
         {services.slice(0, 3).map((service, i) => (
           <Reveal delay={i * 0.1} key={i}>
-            <ServiceCard {...service} />
+            <ServiceCard service={service} />
           </Reveal>
         ))}
       </div>
@@ -23,7 +23,7 @@ export default function ServicesList() {
         <div className="flex flex-col justify-center gap-7 md:flex-row">
           {services.slice(3, 6).map((service, i) => (
             <Reveal delay={i * 0.1} key={i}>
-              <ServiceCard {...service} />
+              <ServiceCard service={service} />
             </Reveal>
           ))}
         </div>

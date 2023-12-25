@@ -1,51 +1,26 @@
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import { Suspense } from "react";
+import Rating from "./Rating";
+import Image from "next/image";
 
-interface Props {
-  image: StaticImageData;
-  title: string;
-  desc: string;
-  quality: number;
-  ratingCount: string;
-  rating: number;
-  href: string;
-}
-
-export default function ServiceCard({
-  image,
-  title,
-  desc,
-  quality,
-  ratingCount,
-  rating,
-  href,
-}: Props) {
+export default function ServiceCard({ service }: { service: any }) {
   return (
-    <Link href={href}>
+    <Link href={service.href}>
       <div className="mb-10 flex-1 duration-200 hover:scale-105 hover:cursor-pointer">
         <Image
           className="rounded-t-3xl"
-          src={image}
+          src={service.image}
           width={400}
-          alt={title}
+          alt={service.title}
           sizes="100vw"
-          quality={quality}
+          quality={service.quality}
           priority={true}
           placeholder="blur"
         />
-        <p className="mt-3 text-xl font-semibold text-darkGray">{title}</p>
-        <p className="text-sm font-medium text-gray">{desc}</p>
-        <div className="mt-1 flex h-max w-max items-center rounded-full bg-primaryLight px-2 py-1 text-xs font-medium">
-          {[...Array(rating)].map((_, i) => (
-            <AiFillStar color="#FFD369" size={15} key={`startFilled-${i}`} />
-          ))}
-          {[...Array(5 - rating)].map((_, i) => (
-            <AiOutlineStar color="#FFD369" size={15} key={`starEmpty-${i}`} />
-          ))}
-          <span className="pl-1">| {ratingCount}</span>
-        </div>
+        <p className="mt-3 text-xl font-semibold text-darkGray">
+          {service.title}
+        </p>
+        <p className="text-sm font-medium text-gray">{service.desc}</p>
+        <Rating rating={service.rating} ratingCount={service.ratingCount} />
       </div>
     </Link>
   );

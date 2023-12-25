@@ -1,9 +1,9 @@
 "use client";
 
-import { auth } from "@/utils/firebase";
 import { useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "@/utils/firebase";
 import { useRouter } from "next/navigation";
+import { onAuthStateChanged } from "firebase/auth";
 
 interface Props {
   children: JSX.Element;

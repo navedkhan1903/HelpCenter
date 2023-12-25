@@ -7,6 +7,8 @@ interface Props {
   label: string;
   loading: Boolean;
   onClick?: () => void;
+  onChange?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
 export default function CustomInput({
@@ -15,11 +17,15 @@ export default function CustomInput({
   label,
   loading,
   onClick,
+  onChange,
+  onKeyDown,
 }: Props) {
   return (
     <div className="flex w-max items-center rounded-xl border-2 border-neutral-100 bg-white px-1 pl-5 text-darkGray shadow-sm">
       {icon}
       <input
+        onChange={onChange}
+        onKeyDown={onKeyDown}
         placeholder={placeholder}
         className="mx-3 w-[30vw] py-4 text-sm font-medium placeholder-gray focus:outline-none lg:w-[15vw]"
       />
