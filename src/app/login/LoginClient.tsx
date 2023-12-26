@@ -25,6 +25,7 @@ export default function LoginClient() {
     if (validateLogin(email, pass)) {
       try {
         await signInWithEmailAndPassword(auth, email, pass);
+        toast.success("Login Successful. Redirecting");
       } catch (err: any) {
         if (err.code === "auth/invalid-credential")
           toast.error("Invalid Email or Password");

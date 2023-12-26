@@ -4,7 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 export default async function Testimonials() {
   const res = await fetch(`${process.env.URL}/api/testimonials`, {
-    cache: "no-cache",
+    next: { revalidate: 0 },
   }).then((res) => res.json());
 
   return (

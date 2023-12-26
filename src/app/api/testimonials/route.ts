@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 import { NextResponse } from "next/server";
 import { connect } from "@/dbConfig/dbConfig";
 import Testimonial from "@/models/testimonialModel";

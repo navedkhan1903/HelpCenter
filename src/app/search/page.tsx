@@ -30,7 +30,10 @@ export function generateMetadata({ searchParams }: { searchParams: any }) {
 
 export default function SearchPage({ searchParams }: { searchParams: any }) {
   const results = [];
-  const query = searchParams.q.replaceAll(" ", "").toLowerCase();
+  const query = searchParams.q
+    .replaceAll(" ", "")
+    .toLowerCase()
+    .replace(/services?/g, "");
   const matches = cleaningServices.filter((service) =>
     service.tags.includes(query),
   );

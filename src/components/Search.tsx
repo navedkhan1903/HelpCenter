@@ -14,11 +14,6 @@ export default function Search() {
     const params = new URLSearchParams(searchParams);
     params.set("q", query);
     router.push(`/search?${params}`);
-
-    window.scroll({
-      top: window.innerHeight / 2.1,
-      behavior: "smooth",
-    });
   }
 
   return (

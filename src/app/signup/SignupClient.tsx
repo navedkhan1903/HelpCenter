@@ -9,7 +9,7 @@ import AuthBtn from "@/components/auth/AuthBtn";
 import toast, { Toaster } from "react-hot-toast";
 import { validateSignup } from "@/utils/functions";
 import AuthInput from "@/components/auth/AuthInput";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import {
   AiOutlineKey,
   AiOutlineEye,
@@ -33,10 +33,14 @@ export default function LoginClient() {
           name,
           email,
         });
+        toast.success("Sign Up Successful. Redirecting");
       } catch (err: any) {
         if (err.code === "auth/email-already-in-use")
           toast.error("Email already in use");
-        else toast.error("Sign Up failed");
+        else {
+          toast.error("Sign Up failed");
+        }
+        signOut(auth);
       }
     }
     setLoading(false);
