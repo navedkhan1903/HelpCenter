@@ -1,0 +1,22 @@
+import type { Metadata } from "next";
+import { services } from "@/utils/data";
+import { servicesMetadata } from "@/utils/metadata";
+import Wrapper from "@/components/services/Wrapper";
+import ServiceCard from "@/components/services/ServiceCard";
+
+export const metadata: Metadata = servicesMetadata;
+
+export default function HomeServices() {
+  return (
+    <Wrapper
+      title="Our Services"
+      subTitle="Swift solutions tailored to your needs – On-demand excellence, always at your fingertips."
+    >
+      <div className="grid grid-cols-1 place-items-center gap-7 md:grid-cols-3 md:place-items-start">
+        {services.map((service, i) => (
+          <ServiceCard key={i} service={service} />
+        ))}
+      </div>
+    </Wrapper>
+  );
+}

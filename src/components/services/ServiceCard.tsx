@@ -16,9 +16,7 @@ export default function ServiceCard({ service }: { service: any }) {
           priority={true}
           placeholder="blur"
         />
-        <p className="mt-3 text-xl font-semibold text-darkGray">
-          {service.title}
-        </p>
+        <p className="mt-3 text-xl font-semibold">{service.title}</p>
         <p className="text-sm font-medium text-gray">{service.desc}</p>
         <Rating rating={service.rating} ratingCount={service.ratingCount} />
       </div>

@@ -5,17 +5,17 @@ import main from "../../../public/main.jpg";
 export default function Front() {
   return (
     <div className="mx-auto mb-60 flex h-auto w-10/12 translate-y-[77px] flex-col-reverse items-center justify-between gap-20 lg:mb-40 lg:h-[calc(100vh-77px)] lg:flex-row">
-      <div className="mx-auto md:mx-0 lg:w-1/2">
-        <div className="mb-5 flex w-max items-center rounded-full bg-primaryLight pr-5 text-sm text-darkGray">
+      <div className="lg:w-1/2">
+        <div className="mb-5 flex w-max items-center rounded-full bg-primaryLight pr-5 text-sm">
           <p className="my-1 ml-1 mr-3 rounded-full bg-primary px-3 py-1 font-semibold">
             New
           </p>
           <p className="font-medium">25% off on Home Services</p>
         </div>
-        <p className="mb-3 text-[14vw] font-semibold leading-none text-darkGray md:text-7xl lg:text-[6.5vw]">
+        <p className="mb-3 text-[14vw] font-semibold leading-none md:text-7xl lg:text-[6.5vw]">
           HelpCenter
         </p>
-        <p className="text-[6vw] font-medium leading-none text-darkGray md:text-3xl lg:text-[2.5vw]">
+        <p className="text-[6vw] font-medium leading-none md:text-3xl lg:text-[2.5vw]">
           On-Demand Services
         </p>
         <p className="my-8 text-sm font-medium text-gray">

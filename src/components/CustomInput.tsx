@@ -21,7 +21,7 @@ export default function CustomInput({
   onKeyDown,
 }: Props) {
   return (
-    <div className="flex w-max items-center rounded-xl border-2 border-neutral-100 bg-white px-1 pl-5 text-darkGray shadow-sm">
+    <div className="flex w-max items-center rounded-xl border-2 border-neutral-100 bg-white px-1 pl-5 shadow-sm">
       {icon}
       <input
         onChange={onChange}
@@ -30,7 +30,7 @@ export default function CustomInput({
         className="mx-3 w-[30vw] py-4 text-sm font-medium placeholder-gray focus:outline-none lg:w-[15vw]"
       />
       {loading ? (
-        <button className="flex w-[119.6px] justify-center rounded-md bg-primary px-6 py-3">
+        <button className="btn w-[119.6px] bg-primary">
           <div className="animate-spin">
             <CgSpinner size={20} />
           </div>
@@ -38,7 +38,7 @@ export default function CustomInput({
       ) : (
         <button
           onClick={onClick}
-          className="rounded-md bg-primary px-6 py-3 text-sm font-semibold duration-200 hover:bg-primaryDark"
+          className="btn bg-primary hover:bg-primaryDark"
         >
           {label}
         </button>

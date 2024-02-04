@@ -10,7 +10,10 @@ export default function FooterItem({ title, items }: Props) {
       <div className="flex flex-col gap-3 text-sm font-semibold text-[#828282]">
         {items.map((item, i) => (
           <div>
-            <button key={i} className="duration-200 hover:text-lightGray">
+            <button
+              key={i}
+              className="text-left duration-200 hover:text-lightGray"
+            >
               {item}
             </button>
           </div>

@@ -14,7 +14,7 @@ export default function SubServiceCard({ service }: { service: any }) {
         placeholder="blur"
       />
       <div className="p-7">
-        <p className="text-xl font-semibold text-darkGray">{service.title}</p>
+        <p className="text-xl font-semibold">{service.title}</p>
         <Rating rating={service.rating} ratingCount={service.ratingCount} />
         <p className="mb-7 border-b-[1px] border-dashed border-gray pb-5 text-sm font-semibold">
           {service.price}
@@ -27,10 +27,8 @@ export default function SubServiceCard({ service }: { service: any }) {
         ))}
 
         <div className="mt-7 flex">
-          <button className="w-full rounded-md px-6 py-3 text-sm font-semibold duration-200">
-            View Details
-          </button>
-          <button className="w-full rounded-md bg-primary px-6 py-3 text-sm font-semibold duration-200 hover:bg-primaryDark">
+          <button className="btn w-full">View Details</button>
+          <button className="btn w-full bg-primary hover:bg-primaryDark">
             Book Service
           </button>
         </div>

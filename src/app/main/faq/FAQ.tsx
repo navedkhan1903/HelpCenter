@@ -9,7 +9,7 @@ export default function FAQ() {
       <Reveal delay={0}>
         <SectionHeading
           title="FAQs"
-          subTitle="Explore the Frequently Asked Questions"
+          subTitle="Answers to your burning questions – Explore our FAQs for clarity and confidence in every click."
         />
       </Reveal>
       <div className="flex flex-col text-sm md:w-9/12 lg:w-7/12">

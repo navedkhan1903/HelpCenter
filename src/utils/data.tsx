@@ -1,13 +1,13 @@
-import Chat from "../lotties/Chat.json";
-import Rocket from "../lotties/Rocket.json";
-import Discount from "../lotties/Discount.json";
-import HourGlass from "../lotties/HourGlass.json";
+import Chat from "@/lotties/Chat.json";
+import Rocket from "@/lotties/Rocket.json";
+import Discount from "@/lotties/Discount.json";
+import HourGlass from "@/lotties/HourGlass.json";
 import LottieWrapper from "@/components/LottieWrapper";
 
-import beauty from "../../public/beauty.jpg";
-import event from "../../public/event.jpg";
-import grocery from "../../public/grocery.jpg";
 import home from "../../public/home.jpg";
+import event from "../../public/event.jpg";
+import beauty from "../../public/beauty.jpg";
+import grocery from "../../public/grocery.jpg";
 import laundary from "../../public/laundary.jpg";
 import learning from "../../public/learning.jpg";
 import mechanic from "../../public/mechanic.jpg";
@@ -18,23 +18,27 @@ import kuldeep from "../../public/kuldeep.jpeg";
 import google from "../../public/google.png";
 import facebook from "../../public/facebook.png";
 
-import tech from "../../public/tech.jpg";
-import cleaning from "../../public/cleaning.jpg";
-import garden from "../../public/garden.jpg";
-import handyman from "../../public/handyman.jpg";
-import home_improvement from "../../public/home_improvement.jpg";
-import maintainance from "../../public/maintainance.jpg";
-
-import appliance_cleaning from "../../public/appliance_cleaning.jpg";
-import carpet_cleaning from "../../public/carpet_cleaning.jpg";
-import house_cleaning from "../../public/house_cleaning.jpg";
-
-import { LuUser2 } from "react-icons/lu";
+import { signOut } from "firebase/auth";
+import { auth } from "@/utils/firebase";
+import { BsBookmark } from "react-icons/bs";
+import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import {
-  IoLocationOutline,
-  IoCardOutline,
-  IoPhonePortraitOutline,
-} from "react-icons/io5";
+  AiOutlineUser,
+  AiOutlineHistory,
+  AiOutlineLogout,
+  AiOutlineBell,
+} from "react-icons/ai";
+
+import tech from "../../public/tech.jpg";
+import garden from "../../public/garden.jpg";
+import cleaning from "../../public/cleaning.jpg";
+import handyman from "../../public/handyman.jpg";
+import maintainance from "../../public/maintainance.jpg";
+import home_improvement from "../../public/home_improvement.jpg";
+
+import house_cleaning from "../../public/house_cleaning.jpg";
+import carpet_cleaning from "../../public/carpet_cleaning.jpg";
+import appliance_cleaning from "../../public/appliance_cleaning.jpg";
 
 export const features = [
   {
@@ -103,65 +107,65 @@ export const services = [
   {
     image: home,
     title: "Home Services",
-    desc: "Cleaning, Maintenance, Pest Control, etc.",
+    desc: "Cleaning | Handyman | Home Improvement",
     quality: 93,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home-services",
+    href: "services/home",
   },
   {
     image: laundary,
     title: "Laundry & Dry Cleaning Services",
-    desc: "Dry Cleaning, Shoe Repair, Wash & Fold, etc.",
+    desc: "Dry Cleaning | Shoe Repair | Wash & Fold",
     quality: 95,
     ratingCount: "2.7k",
     rating: 4,
-    href: "laundry-services",
+    href: "services/laundry",
   },
   {
     image: learning,
     title: "E-learning & Home Tuition Services",
-    desc: "Online Tutoring, Homework Help, etc.",
+    desc: "Online Tutoring | Homework Help",
     quality: 93,
     ratingCount: "8.2k",
     rating: 5,
-    href: "tuition-services",
+    href: "services/tuition",
   },
   {
     image: beauty,
     title: "Beauty & Wellness Services",
-    desc: "Haircare, Skincare, Massage, Makeup, Waxing, etc.",
+    desc: "Haircare | Skincare | Massage",
     quality: 93,
     ratingCount: "5.6k",
     rating: 4,
-    href: "beauty-services",
+    href: "services/beauty",
   },
   {
     image: event,
     title: "Event Management Services",
-    desc: "Catering, Event Planning, Venue Selection, etc.",
+    desc: "Catering | Event Planning | Venue Selection",
     quality: 85,
     ratingCount: "2.3k",
     rating: 5,
-    href: "event-services",
+    href: "services/event",
   },
   {
     image: grocery,
     title: "Grocery Delivery Services",
-    desc: "Meal Kits, Pantry Staples, Fresh Produce, etc.",
+    desc: "Meal Kits | Pantry Staples | Fresh Produce",
     quality: 89,
     ratingCount: "6.2k",
     rating: 4,
-    href: "grocery-services",
+    href: "services/grocery",
   },
   {
     image: mechanic,
     title: "Vehicle Repairing Services",
-    desc: "AC Repairing, Tire Services, Auto Body Work, etc.",
-    quality: 41,
+    desc: "AC Repairing | Tire Services | Auto Body Work",
+    quality: 95,
     ratingCount: "1.5k",
     rating: 5,
-    href: "vehicle-services",
+    href: "services/vehicle",
   },
 ];
 
@@ -293,26 +297,60 @@ export const notifications = [
   },
 ];
 
-export const profileNav = [
+export const states = [
+  { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+  { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+  { value: "Assam", label: "Assam" },
+  { value: "Bihar", label: "Bihar" },
+  { value: "Chhattisgarh", label: "Chhattisgarh" },
+  { value: "Goa", label: "Goa" },
+  { value: "Gujarat", label: "Gujarat" },
+  { value: "Haryana", label: "Haryana" },
+  { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+  { value: "Jharkhand", label: "Jharkhand" },
+  { value: "Karnataka", label: "Karnataka" },
+  { value: "Kerala", label: "Kerala" },
+  { value: "Madhya Pradesh", label: "Madhya Pradesh" },
+  { value: "Maharashtra", label: "Maharashtra" },
+  { value: "Manipur", label: "Manipur" },
+  { value: "Meghalaya", label: "Meghalaya" },
+  { value: "Mizoram", label: "Mizoram" },
+  { value: "Nagaland", label: "Nagaland" },
+  { value: "Odisha", label: "Odisha" },
+  { value: "Punjab", label: "Punjab" },
+  { value: "Rajasthan", label: "Rajasthan" },
+  { value: "Sikkim", label: "Sikkim" },
+  { value: "Tamil Nadu", label: "Tamil Nadu" },
+  { value: "Telangana", label: "Telangana" },
+  { value: "Tripura", label: "Tripura" },
+  { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+  { value: "Uttarakhand", label: "Uttarakhand" },
+  { value: "West Bengal", label: "West Bengal" },
+];
+
+export const navbarDropdown = [
+  { href: "/profile", icon: <AiOutlineUser size={18} />, label: "My Profile" },
   {
-    icon: <LuUser2 size={18} />,
-    state: [true, false, false, false],
-    url: "info",
+    href: "/active",
+    icon: <HiOutlineWrenchScrewdriver size={18} />,
+    label: "Active Services",
   },
   {
-    icon: <IoLocationOutline size={18} />,
-    state: [false, true, false, false],
-    url: "address",
+    href: "/history",
+    icon: <AiOutlineHistory size={18} />,
+    label: "Service History",
+  },
+  { href: "/saved", icon: <BsBookmark size={18} />, label: "Saved Services" },
+  {
+    href: "/notifications",
+    icon: <AiOutlineBell size={18} />,
+    label: "Notifications",
   },
   {
-    icon: <IoPhonePortraitOutline size={18} />,
-    state: [false, false, true, false],
-    url: "upi",
-  },
-  {
-    icon: <IoCardOutline size={18} />,
-    state: [false, false, false, true],
-    url: "cards",
+    onClick: () => signOut(auth),
+    href: "/",
+    icon: <AiOutlineLogout size={18} />,
+    label: "Sign out",
   },
 ];
 
@@ -324,16 +362,7 @@ export const homeServices = [
     quality: 96,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home-services/cleaning",
-  },
-  {
-    image: garden,
-    title: "Lawn and Garden Services",
-    desc: "Garden Maintenance | Lawn Mowing | Landscaping",
-    quality: 95,
-    ratingCount: "4.9k",
-    rating: 5,
-    href: "home-services/gardening",
+    href: "home/cleaning",
   },
   {
     image: handyman,
@@ -342,7 +371,7 @@ export const homeServices = [
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home-services/handyman",
+    href: "home/handyman",
   },
   {
     image: home_improvement,
@@ -351,7 +380,16 @@ export const homeServices = [
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home-services/home-improvement",
+    href: "home/home-improvement",
+  },
+  {
+    image: garden,
+    title: "Lawn and Garden Services",
+    desc: "Garden Maintenance | Lawn Mowing | Landscaping",
+    quality: 95,
+    ratingCount: "4.9k",
+    rating: 5,
+    href: "home/gardening",
   },
   {
     image: maintainance,
@@ -360,7 +398,7 @@ export const homeServices = [
     quality: 93,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home-services/maintainance",
+    href: "home/maintainance",
   },
   {
     image: tech,
@@ -369,7 +407,7 @@ export const homeServices = [
     quality: 93,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home-services/tech",
+    href: "home/tech",
   },
 ];
 

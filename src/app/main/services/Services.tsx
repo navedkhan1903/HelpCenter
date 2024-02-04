@@ -8,7 +8,7 @@ export default function Services() {
       <Reveal delay={0}>
         <SectionHeading
           title="Our Services"
-          subTitle="Explore the Services of Our Platform"
+          subTitle="Swift solutions tailored to your needs – On-demand excellence, always at your fingertips."
         />
       </Reveal>
       <ServicesList />

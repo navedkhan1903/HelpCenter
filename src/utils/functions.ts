@@ -1,25 +1,53 @@
 import toast from "react-hot-toast";
 
+function validateEmail(email: string) {
+  return /^\S+@\S+\.\S+$/.test(email);
+}
+
 export function validateLogin(email: string, pass: string) {
-  if (!/^\S+@\S+\.\S+$/.test(email)) toast.error("Invalid Email Address");
-  else if (!pass) toast.error("Password is required");
-  else {
-    return true;
+  if (!validateEmail(email) || !pass) {
+    toast.error(!pass ? "Password is required" : "Invalid Email Address");
+    return false;
   }
-  return false;
+  return true;
 }
 
 export function validateSignup(name: string, email: string, pass: string) {
-  if (!name) toast.error("Full Name is required");
-  else if (!/^\S+@\S+\.\S+$/.test(email)) toast.error("Invalid Email Address");
-  else if (pass.length < 6)
-    toast.error("Password must be atleast 6 characters long");
-  else {
-    return true;
+  if (!name || !validateEmail(email) || pass.length < 6) {
+    toast.error(
+      !name
+        ? "Full Name is required"
+        : pass.length < 6
+        ? "Password must be at least 6 characters long"
+        : "Invalid Email Address",
+    );
+    return false;
   }
+  return true;
+}
+
+export function validateAddress(values: any, state: string) {
+  if (!/^\d{10}$/.test(values.phone)) toast.error("Invalid Phone Number");
+  else if (values.altPhone.length > 0 && !/^\d{10}$/.test(values.altPhone))
+    toast.error("Invalid Alternate Phone Number");
+  else if (!/^\d{6}$/.test(values.pincode)) toast.error("Invalid Pincode");
+  else if (!values.locality) toast.error("Locality is Required");
+  else if (!values.address) toast.error("Address is Required");
+  else if (!values.city) toast.error("City is Required");
+  else if (!state) toast.error("State is Required");
+  else return true;
   return false;
 }
 
 export function capitalizeFirstLetterOfEachWord(str: string) {
   return str.replace(/\b\w/g, (match) => match.toUpperCase());
+}
+
+export function generateUniqueId() {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+{[}]|:;<,>.?/";
+  return Array.from(
+    { length: 3 },
+    () => characters[Math.floor(Math.random() * characters.length)],
+  ).join("");
 }

@@ -12,7 +12,7 @@ export default async function Testimonials() {
       <Reveal delay={0}>
         <SectionHeading
           title="What People Say About Us"
-          subTitle="Explore what people say about us"
+          subTitle="Raving Reviews: Our clients speak – Seamless, reliable, and a game-changer. See what they're saying!"
         />
       </Reveal>
       <Testimonial res={res} />

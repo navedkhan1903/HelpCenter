@@ -1,4 +1,4 @@
-import NavItem from "./NavItem";
+import NavItem from "../../components/navBar/NavItem";
 import { motion } from "framer-motion";
 
 export default function Mobile() {
@@ -10,9 +10,9 @@ export default function Mobile() {
       exit={{ y: "-25px", opacity: 0 }}
     >
       <div className="mt-10 flex flex-col gap-6">
-        <NavItem title="About Us" />
-        <NavItem title="Services" />
-        <NavItem title="Sell your services" />
+        <NavItem title="About Us" href="/about-us" />
+        <NavItem title="Services" href="/services" />
+        <NavItem title="Sell your services" href="/sell-services" />
       </div>
     </motion.div>
   );

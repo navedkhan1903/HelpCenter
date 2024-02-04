@@ -35,11 +35,11 @@ export default function LoginClient() {
         });
         toast.success("Sign Up Successful. Redirecting");
       } catch (err: any) {
-        if (err.code === "auth/email-already-in-use")
-          toast.error("Email already in use");
-        else {
-          toast.error("Sign Up failed");
-        }
+        toast.error(
+          err.code === "auth/email-already-in-use"
+            ? "Email already in use"
+            : "Sign Up failed",
+        );
         signOut(auth);
       }
     }
@@ -53,23 +53,29 @@ export default function LoginClient() {
         icon={<LuUser2 color="#767676" size="18" />}
         type="text"
         placeholder="Full Name"
-        onChange={(event) => setName(event.target.value)}
+        onChange={(e) => setName(e.target.value)}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleSignup();
+        }}
       />
 
       <AuthInput
         icon={<FiMail color="#767676" size="18" />}
         type="email"
         placeholder="Email"
-        onChange={(event) => setEmail(event.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleSignup();
+        }}
       />
 
       <AuthInput
         icon={<AiOutlineKey color="#767676" size="18" />}
         type={passVisible ? "text" : "password"}
         placeholder="Password"
-        onChange={(event) => setPass(event.target.value)}
-        onKeyDown={(event) => {
-          if (event.key === "Enter") handleSignup();
+        onChange={(e) => setPass(e.target.value)}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleSignup();
         }}
         isVisible={
           passVisible ? (

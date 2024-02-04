@@ -1,10 +1,9 @@
 import Reveal from "@/components/Reveal";
 import Search from "@/components/Search";
+import NoResult from "@/components/NoResult";
 import Footer from "@/components/footer/Footer";
 import { cleaningServices } from "@/utils/data";
-import NoResults from "../../lotties/NoResults.json";
-import LottieWrapper from "@/components/LottieWrapper";
-import SubServiceCard from "@/components/SubServiceCard";
+import SubServiceCard from "@/components/services/SubServiceCard";
 import SectionHeading from "@/components/SectionHeading";
 import { capitalizeFirstLetterOfEachWord } from "@/utils/functions";
 
@@ -54,23 +53,10 @@ export default function SearchPage({ searchParams }: { searchParams: any }) {
             ))}
           </div>
           {results.length === 0 && (
-            <div className="flex flex-col items-center">
-              <LottieWrapper
-                options={{
-                  loop: true,
-                  autoplay: true,
-                  animationData: NoResults,
-                }}
-                height={345}
-                width={345}
-              />
-              <p className="text-2xl font-semibold text-darkGray">
-                No Results found
-              </p>
-              <p className="text-sm font-medium text-gray">
-                We couldn't find what you're looking for
-              </p>
-            </div>
+            <NoResult
+              title="No Results Found"
+              subtitle="We couldn't find what you're looking for..."
+            />
           )}
         </div>
       </Reveal>

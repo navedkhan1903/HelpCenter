@@ -27,9 +27,11 @@ export default function LoginClient() {
         await signInWithEmailAndPassword(auth, email, pass);
         toast.success("Login Successful. Redirecting");
       } catch (err: any) {
-        if (err.code === "auth/invalid-credential")
-          toast.error("Invalid Email or Password");
-        else toast.error("Login Failed");
+        toast.error(
+          err.code === "auth/invalid-credential"
+            ? "Invalid Email or Password"
+            : "Login Failed",
+        );
       }
     }
     setLoading(false);
@@ -42,16 +44,19 @@ export default function LoginClient() {
         icon={<FiMail color="#767676" size="18" />}
         type="email"
         placeholder="Email"
-        onChange={(event) => setEmail(event.target.value)}
+        onChange={(e) => setEmail(e.target.value)}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleLogin();
+        }}
       />
 
       <AuthInput
         icon={<AiOutlineKey color="#767676" size="18" />}
         type={passVisible ? "text" : "password"}
         placeholder="Password"
-        onChange={(event) => setPass(event.target.value)}
-        onKeyDown={(event) => {
-          if (event.key === "Enter") handleLogin();
+        onChange={(e) => setPass(e.target.value)}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleLogin();
         }}
         isVisible={
           passVisible ? (

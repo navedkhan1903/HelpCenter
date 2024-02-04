@@ -1,14 +1,14 @@
 "use client";
 
-import Lines from "./Lines";
 import Link from "next/link";
 import Mobile from "./Mobile";
 import Dropdown from "./Dropdown";
 import { auth } from "@/utils/firebase";
 import type { User } from "firebase/auth";
-import NavItem from "@/app/navBar/NavItem";
 import { useState, useEffect } from "react";
+import Lines from "@/components/navBar/Lines";
 import { AiOutlineUser } from "react-icons/ai";
+import NavItem from "@/components/navBar/NavItem";
 import { onAuthStateChanged } from "firebase/auth";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -18,12 +18,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) setUser(user);
-      else setUser(null);
-    });
-  }, []);
+  useEffect(() => onAuthStateChanged(auth, setUser), []);
 
   return (
     <div className="fixed top-0 z-10 w-full border-b-2 border-neutral-100 bg-white py-5 text-sm font-semibold">
@@ -40,17 +35,14 @@ export default function NavBar() {
               <Lines isOpen={isOpen} />
             </div>
           </div>
-          <Link
-            href="/"
-            className="cursor-pointer rounded-md text-xl text-darkGray"
-          >
+          <Link href="/" className="cursor-pointer rounded-md text-xl">
             HelpCenter
           </Link>
         </div>
         <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform gap-[3.3vw] md:flex">
-          <NavItem title="About Us" />
-          <NavItem title="Services" />
-          <NavItem title="Sell your services" />
+          <NavItem title="About Us" href="/about-us" />
+          <NavItem title="Services" href="/services" />
+          <NavItem title="Sell your services" href="/sell-services" />
         </div>
 
         {user ? (
@@ -59,7 +51,7 @@ export default function NavBar() {
             onMouseLeave={() => setDropdown(false)}
           >
             <button
-              className="flex gap-1 rounded-full border-[1px] border-gray px-3 py-2 text-darkGray"
+              className="flex gap-1 rounded-full border-[1px] border-gray px-3 py-2"
               onMouseEnter={() => setDropdown(true)}
             >
               <AiOutlineUser size={18} />
@@ -69,7 +61,7 @@ export default function NavBar() {
         ) : (
           <Link
             href="/login"
-            className="absolute right-[8vw] rounded-md bg-primary px-6 py-3 text-center text-darkGray duration-200 hover:bg-primaryDark"
+            className="btn absolute right-[8vw] bg-primary hover:bg-primaryDark"
           >
             Login
           </Link>

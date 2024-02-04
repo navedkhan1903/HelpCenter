@@ -8,7 +8,7 @@ export default function Features() {
       <Reveal delay={0}>
         <SectionHeading
           title="Why Choose Us"
-          subTitle="Explore the Benefits of Our Platform"
+          subTitle="Choose us, because we turn 'I need it now' into 'I got it already' – where your convenience meets our commitment!"
         />
       </Reveal>
       <div className="grid grid-cols-1 md:mx-[5vw] lg:mx-0 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-5">
@@ -17,9 +17,7 @@ export default function Features() {
             <div className="flex flex-col items-start py-5 md:flex-row md:items-center md:gap-5">
               <div>{feature.icon}</div>
               <div>
-                <p className="mb-2 text-2xl font-semibold text-darkGray">
-                  {feature.title}
-                </p>
+                <p className="mb-2 text-2xl font-semibold">{feature.title}</p>
                 <p className="text-sm font-medium text-gray">{feature.desc}</p>
               </div>
             </div>

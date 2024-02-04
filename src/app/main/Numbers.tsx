@@ -2,7 +2,7 @@ import { numbers } from "@/utils/data";
 
 export default function Numbers() {
   return (
-    <div className="mb-40 grid grid-cols-6 gap-y-10 bg-primary py-10 font-semibold text-darkGray md:grid-cols-12">
+    <div className="mb-40 grid grid-cols-6 gap-y-10 bg-primary py-10 font-semibold md:grid-cols-12">
       {numbers.map((number, i) => (
         <div
           key={i}

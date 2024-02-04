@@ -9,7 +9,7 @@ export default function AuthSocial() {
         <div className="mx-5 text-sm font-normal text-gray">or</div>
         <div className="h-[1px] w-full bg-neutral-100"></div>
       </div>
-      <div className="flex justify-between gap-5 text-sm font-medium text-darkGray">
+      <div className="flex justify-between gap-5 text-sm font-medium">
         {socialLogin.map((item, i) => (
           <button
             key={i}

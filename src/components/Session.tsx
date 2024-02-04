@@ -13,12 +13,16 @@ interface Props {
 
 export default function Session({ children, status, path }: Props) {
   const router = useRouter();
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user && status === "unauthenticated") router.replace(path);
-      else if (!user && status === "authenticated") router.replace(path);
-    });
-  }, []);
+  useEffect(
+    () =>
+      onAuthStateChanged(
+        auth,
+        (user) =>
+          (user ? status === "unauthenticated" : status === "authenticated") &&
+          router.replace(path),
+      ),
+    [],
+  );
 
   return <>{children}</>;
 }
