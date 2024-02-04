@@ -1,28 +1,13 @@
 import FAQItem from "./FAQItem";
 import { faq } from "@/utils/data";
 import Reveal from "@/components/Reveal";
+import { faqScript } from "@/utils/scripts";
 import SectionHeading from "@/components/SectionHeading";
 
 export default function FAQ() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faq.map(({ q, a }) => ({
-              "@type": "Question",
-              name: q,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: a,
-              },
-            })),
-          }),
-        }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={faqScript} />
       <div className="mx-auto mb-40 flex w-10/12 flex-col items-center">
         <Reveal delay={0}>
           <SectionHeading

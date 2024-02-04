@@ -51,3 +51,22 @@ export function generateUniqueId() {
     () => characters[Math.floor(Math.random() * characters.length)],
   ).join("");
 }
+
+interface breadcrumbProps {
+  position: number;
+  name: String;
+  item: String;
+}
+
+export const createBreadcrumb = (items: any) => ({
+  __html: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map(({ position, name, item }: breadcrumbProps) => ({
+      "@type": "ListItem",
+      position,
+      name,
+      item,
+    })),
+  }),
+});
