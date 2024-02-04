@@ -32,7 +32,14 @@ export default function NewAddress({ onUpdate }: { onUpdate: () => void }) {
   function closeModal() {
     setIsModalOpen(false);
     document.body.style.overflow = "auto";
-    setValues({ ...values, city: "" });
+    setValues({
+      phone: "",
+      altPhone: "",
+      pincode: "",
+      locality: "",
+      address: "",
+      city: "",
+    });
     setState("");
   }
 
