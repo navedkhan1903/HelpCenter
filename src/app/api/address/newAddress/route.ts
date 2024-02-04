@@ -22,6 +22,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: "Address saved successfully" });
   } catch {
-    return NextResponse.error;
+    return NextResponse.error();
   }
 }
