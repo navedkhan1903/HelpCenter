@@ -11,6 +11,6 @@ export async function GET() {
 
     return NextResponse.json(res.sort(() => Math.random() - 0.5).slice(0, 4));
   } catch {
-    return NextResponse.error;
+    return NextResponse.error();
   }
 }

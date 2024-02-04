@@ -10,6 +10,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: "Sign up successful" });
   } catch {
-    return NextResponse.error;
+    return NextResponse.error();
   }
 }

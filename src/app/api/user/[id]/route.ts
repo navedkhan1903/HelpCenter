@@ -7,6 +7,6 @@ export async function GET(req: NextRequest, context: any) {
     await connect();
     return NextResponse.json(await User.findOne({ uid: context.params.id }));
   } catch {
-    return NextResponse.error;
+    return NextResponse.error();
   }
 }

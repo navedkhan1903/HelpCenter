@@ -10,6 +10,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ message: "Name changed successfully" });
   } catch {
-    return NextResponse.error;
+    return NextResponse.error();
   }
 }
