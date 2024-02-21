@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { homeServices } from "@/utils/data";
-import Wrapper from "@/components/services/Wrapper";
+import Wrapper from "@/components/shared/Wrapper";
 import { homeServicesMetadata } from "@/utils/metadata";
 import { homeServicesBreadcrumb } from "@/utils/scripts";
 import ServiceCard from "@/components/services/ServiceCard";

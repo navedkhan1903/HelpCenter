@@ -1,11 +1,11 @@
-import Front from "./main/Front";
-import FAQ from "./main/faq/FAQ";
-import Numbers from "./main/Numbers";
-import Features from "./main/Features";
-import NewsLetter from "./main/NewsLetter";
-import Services from "./main/services/Services";
-import Footer from "../components/footer/Footer";
-import Testimonials from "./main/testimonials/Testimonials";
+import FAQ from "@/components/home/faq/FAQ";
+import Front from "@/components/home/Front";
+import Footer from "@/components/footer/Footer";
+import Numbers from "@/components/home/Numbers";
+import Features from "@/components/home/Features";
+import NewsLetter from "@/components/home/NewsLetter";
+import Services from "@/components/home/services/Services";
+import Testimonials from "../components/home/testimonials/Testimonials";
 
 export default function Home() {
   return (

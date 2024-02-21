@@ -11,6 +11,7 @@ export const loginMetadata = {
   openGraph: {
     title: loginTitle,
     description: loginDesc,
+    url: "https://helpcenter-web.vercel.app/login",
   },
   twitter: {
     title: loginTitle,
@@ -28,6 +29,7 @@ export const profileMetadata = {
   openGraph: {
     title: profileTitle,
     description: profileDesc,
+    url: "https://helpcenter-web.vercel.app/profile",
   },
   twitter: {
     title: profileTitle,
@@ -45,6 +47,7 @@ export const servicesMetadata = {
   openGraph: {
     title: servicesTitle,
     description: servicesDesc,
+    url: "https://helpcenter-web.vercel.app/services",
   },
   twitter: {
     title: servicesTitle,
@@ -62,6 +65,7 @@ export const cleaningMetadata = {
   openGraph: {
     title: cleaningTitle,
     description: cleaningDesc,
+    url: "https://helpcenter-web.vercel.app/services/home/cleaning",
     images: [{ url: cleaning.src }],
   },
   twitter: {
@@ -81,6 +85,7 @@ export const homeServicesMetadata = {
   openGraph: {
     title: homeServicesTitle,
     description: homeServicesDesc,
+    url: "https://helpcenter-web.vercel.app/services/home",
     images: [{ url: home.src }],
   },
   twitter: {
@@ -100,6 +105,7 @@ export const signupMetadata = {
   openGraph: {
     title: signupTitle,
     description: signupDesc,
+    url: "https://helpcenter-web.vercel.app/signup",
   },
   twitter: {
     title: signupTitle,
@@ -117,6 +123,7 @@ export const mainMetadata = {
   openGraph: {
     title: mainTitle,
     description: mainDesc,
+    url: "https://helpcenter-web.vercel.app",
   },
   twitter: {
     title: mainTitle,

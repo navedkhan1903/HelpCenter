@@ -1,8 +1,11 @@
 import "./globals.css";
-import NavBar from "./navBar/NavBar";
 import type { Metadata } from "next";
+import { store } from "@/store/index";
+import { Provider } from "react-redux";
 import { Montserrat } from "next/font/google";
+import NavBar from "@/components/navBar/NavBar";
 import { mainMetadata } from "@/utils/metadata";
+import ReduxProvider from "@/components/shared/ReduxProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = mainMetadata;
@@ -16,7 +19,10 @@ export default function RootLayout({
     <html lang="en" className={montserrat.className}>
       <body className="text-darkGray">
         <NavBar />
-        {children}
+        <ReduxProvider>
+          <>{children}</>
+        </ReduxProvider>
+        {/* {children} */}
       </body>
     </html>
   );

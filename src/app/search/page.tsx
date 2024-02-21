@@ -1,10 +1,10 @@
-import Reveal from "@/components/Reveal";
-import Search from "@/components/Search";
-import NoResult from "@/components/NoResult";
+import Reveal from "@/components/shared/Reveal";
+import Search from "@/components/shared/Search";
 import Footer from "@/components/footer/Footer";
 import { cleaningServices } from "@/utils/data";
+import NoResult from "@/components/shared/NoResult";
+import SectionHeading from "@/components/shared/SectionHeading";
 import SubServiceCard from "@/components/services/SubServiceCard";
-import SectionHeading from "@/components/SectionHeading";
 import { capitalizeFirstLetterOfEachWord } from "@/utils/functions";
 
 export function generateMetadata({ searchParams }: { searchParams: any }) {

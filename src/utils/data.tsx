@@ -2,7 +2,7 @@ import Chat from "@/lotties/Chat.json";
 import Rocket from "@/lotties/Rocket.json";
 import Discount from "@/lotties/Discount.json";
 import HourGlass from "@/lotties/HourGlass.json";
-import LottieWrapper from "@/components/LottieWrapper";
+import LottieWrapper from "@/components/shared/LottieWrapper";
 
 import home from "../../public/home.jpg";
 import event from "../../public/event.jpg";
@@ -28,6 +28,10 @@ import {
   AiOutlineLogout,
   AiOutlineBell,
 } from "react-icons/ai";
+
+import { GoMoon } from "react-icons/go";
+import { IoSunnyOutline } from "react-icons/io5";
+import { WiSunrise, WiSunset } from "react-icons/wi";
 
 import tech from "../../public/tech.jpg";
 import garden from "../../public/garden.jpg";
@@ -354,6 +358,29 @@ export const navbarDropdown = [
   },
 ];
 
+export const timeSlots = [
+  {
+    icon: <WiSunrise size="25" />,
+    label: "Morning",
+    time: "9AM - 12PM",
+  },
+  {
+    icon: <IoSunnyOutline size="25" />,
+    label: "Afternoon",
+    time: "12PM - 3PM",
+  },
+  {
+    icon: <WiSunset size="25" />,
+    label: "Evening",
+    time: "3PM - 6PM",
+  },
+  {
+    icon: <GoMoon size="25" />,
+    label: "Night",
+    time: "6PM - 9PM",
+  },
+];
+
 export const homeServices = [
   {
     image: cleaning,
@@ -426,29 +453,7 @@ export const cleaningServices = [
       "Microwave Interior Cleaning",
       "Washing Machine Drum Clean-Up",
     ],
-    tags: [
-      "maid",
-      "oven",
-      "stove",
-      "fridge",
-      "washing",
-      "cleaner",
-      "cleaning",
-      "appliance",
-      "microwave",
-      "dishwahser",
-      "refrigerator",
-      "ovencleaning",
-      "stovecleaning",
-      "washingmachine",
-      "fridgecleaning",
-      "microwavecleaning",
-      "appliancecleaning",
-      "dishwashercleaning",
-      "refrigeratorcleaning",
-      "washingmachinecleaning",
-      "refrigeratordeepcleaning",
-    ],
+    tags: "appliance cleaning refrigerator oven stove dishwasher maintenance microwave washing machine drum deep interior quality price rating count services deep-cleaning maintenance upkeep sanitation hygiene kitchen home household professional efficient thorough tidy spotless gleaming pristine sanitized fresh organized polished scrubbed deodorized sanitized expert skilled experienced reliable affordable fast convenient eco-friendly thorough effective",
   },
   {
     title: "Carpet Cleaning",
@@ -464,27 +469,7 @@ export const cleaningServices = [
       "Carpet Deodorizing",
       "Carpet Protection Treatment",
     ],
-    tags: [
-      "rug",
-      "maid",
-      "carpet",
-      "cleaner",
-      "cleaning",
-      "spotremoval",
-      "rugcleaning",
-      "deepcleaning",
-      "stainremoval",
-      "steamcleaning",
-      "carpetwashing",
-      "carpetcleaning",
-      "carpettreatment",
-      "carpetshampooing",
-      "carpetprotection",
-      "carpetdeodorizing",
-      "deepcarpetcleaning",
-      "carpetsteamcleaning",
-      "carpetprotectiontraetment",
-    ],
+    tags: "carpet cleaning steam spot stain removal shampooing deodorizing protection treatment deep quality price rating services affordable professional thorough efficient reliable experienced skilled steam-cleaning deep-cleaning thorough-cleaning effective certified trained eco-friendly quick convenient expert odor freshening upholstery maintenance hygiene dirt grime bacteria allergen sanitization disinfection home office commercial residential affordable trusted satisfaction",
   },
   {
     title: "House Cleaning",
@@ -500,24 +485,6 @@ export const cleaningServices = [
       "Bathroom Cleaning",
       "Window and Blind Cleaning",
     ],
-    tags: [
-      "maid",
-      "blind",
-      "house",
-      "window",
-      "kitchen",
-      "cleaner",
-      "bathroom",
-      "cleaning",
-      "deepcleaning",
-      "blindcleaning",
-      "housecleaning",
-      "windowcleaning",
-      "kitchencleaning",
-      "regularcleaning",
-      "bathroomcleaning",
-      "regularhousecleaning",
-      "windowandblindcleaning",
-    ],
+    tags: "housecleaning cleaning house deepcleaning kitchen bathroom window blind regular service quality price rating count home tidy neat scrub shine sanitize dust mop vacuum wipe spotless efficient professional organized thorough quick affordable reliable experienced team satisfaction detail fresh sparkling hygienic fast expert household chores checklist solution routine pristine grime spot bacteria",
   },
 ];

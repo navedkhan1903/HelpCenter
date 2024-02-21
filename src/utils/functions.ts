@@ -45,7 +45,7 @@ export function capitalizeFirstLetterOfEachWord(str: string) {
 
 export function generateUniqueId() {
   const characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+{[}]|:;<,>.?/";
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   return Array.from(
     { length: 3 },
     () => characters[Math.floor(Math.random() * characters.length)],
