@@ -1,7 +1,5 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { store } from "@/store/index";
-import { Provider } from "react-redux";
 import { Montserrat } from "next/font/google";
 import NavBar from "@/components/navBar/NavBar";
 import { mainMetadata } from "@/utils/metadata";
