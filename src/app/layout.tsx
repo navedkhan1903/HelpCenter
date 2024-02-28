@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import NavBar from "@/components/navBar/NavBar";
 import { mainMetadata } from "@/utils/metadata";
-import ReduxProvider from "@/components/shared/ReduxProvider";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = mainMetadata;

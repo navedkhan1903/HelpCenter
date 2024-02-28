@@ -3,6 +3,7 @@ import { Toaster } from "react-hot-toast";
 import Session from "@/components/shared/Session";
 import Wrapper from "@/components/shared/Wrapper";
 import { profileMetadata } from "@/utils/metadata";
+import ReduxProvider from "@/components/shared/ReduxProvider";
 import ProfileClient from "@/components/profile/ProfileClient";
 
 export const metadata: Metadata = profileMetadata;
@@ -16,7 +17,9 @@ export default function Profile() {
           title="My Profile"
           subTitle="Bringing convenience to your doorstep – because life's too short for waiting in line!"
         >
-          <ProfileClient />
+          <ReduxProvider>
+            <ProfileClient />
+          </ReduxProvider>
         </Wrapper>
       </Session>
     </>
