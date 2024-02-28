@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const profileSlice = createSlice({
   name: "updateProfile",
-  initialState: { profileUpdated: new Date() },
+  initialState: { profileUpdated: 0 },
   reducers: {
     update: (state) => {
-      state.profileUpdated = new Date();
+      state.profileUpdated++;
     },
   },
 });

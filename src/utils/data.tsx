@@ -446,6 +446,7 @@ export const cleaningServices = [
     price: "₹150",
     rating: 4,
     ratingCount: "100",
+    time: "2-4h",
     services: [
       "Refrigerator Deep Cleaning",
       "Oven and Stove-Top Cleaning",
@@ -453,6 +454,7 @@ export const cleaningServices = [
       "Microwave Interior Cleaning",
       "Washing Machine Drum Clean-Up",
     ],
+    desc: "Revitalize your appliances with expert cleaning services: refrigerators, ovens, dishwashers, microwaves, and washing machines",
     tags: "appliance cleaning refrigerator oven stove dishwasher maintenance microwave washing machine drum deep interior quality price rating count services deep-cleaning maintenance upkeep sanitation hygiene kitchen home household professional efficient thorough tidy spotless gleaming pristine sanitized fresh organized polished scrubbed deodorized sanitized expert skilled experienced reliable affordable fast convenient eco-friendly thorough effective",
   },
   {
@@ -462,6 +464,7 @@ export const cleaningServices = [
     price: "₹499",
     rating: 5,
     ratingCount: "200",
+    time: "1-3h",
     services: [
       "Deep Carpet Steam Cleaning",
       "Spot and Stain Removal",
@@ -469,6 +472,7 @@ export const cleaningServices = [
       "Carpet Deodorizing",
       "Carpet Protection Treatment",
     ],
+    desc: "Refresh your carpets with professional services: deep steam cleaning, stain removal, shampooing, deodorizing, and protection.",
     tags: "carpet cleaning steam spot stain removal shampooing deodorizing protection treatment deep quality price rating services affordable professional thorough efficient reliable experienced skilled steam-cleaning deep-cleaning thorough-cleaning effective certified trained eco-friendly quick convenient expert odor freshening upholstery maintenance hygiene dirt grime bacteria allergen sanitization disinfection home office commercial residential affordable trusted satisfaction",
   },
   {
@@ -478,6 +482,7 @@ export const cleaningServices = [
     price: "₹599",
     rating: 3,
     ratingCount: "400",
+    time: "2-4h",
     services: [
       "Regular House Cleaning",
       "Deep Cleaning",
@@ -485,6 +490,7 @@ export const cleaningServices = [
       "Bathroom Cleaning",
       "Window and Blind Cleaning",
     ],
+    desc: "Transform your home with top-quality services: regular cleaning, deep cleaning, kitchen, bathroom, and window cleaning.",
     tags: "housecleaning cleaning house deepcleaning kitchen bathroom window blind regular service quality price rating count home tidy neat scrub shine sanitize dust mop vacuum wipe spotless efficient professional organized thorough quick affordable reliable experienced team satisfaction detail fresh sparkling hygienic fast expert household chores checklist solution routine pristine grime spot bacteria",
   },
 ];

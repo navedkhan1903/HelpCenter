@@ -17,7 +17,7 @@ export default function useLogin() {
         toast.error(
           err.code === "auth/invalid-credential"
             ? "Invalid Email or Password"
-            : "Login Failed",
+            : err.message,
         );
       }
     }

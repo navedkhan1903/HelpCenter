@@ -18,7 +18,7 @@ export default function useDeleteAddress(
       handleModal("delete", "close");
       toast.success("Address successfully deleted");
     } catch (err: any) {
-      toast.error("Something went wrong");
+      toast.error(err.message);
     }
     setDeleting(false);
   }

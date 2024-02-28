@@ -7,7 +7,7 @@ export default function useAddress(initialValues: any, initialState: string) {
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [values, setValues] = useState(initialValues);
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState<any>(initialState);
 
   useEffect(() => {
     (async () => {
@@ -17,36 +17,38 @@ export default function useAddress(initialValues: any, initialState: string) {
           const res = await fetch(
             `https://api.postalpincode.in/pincode/${values.pincode}`,
           ).then((res) => res.json());
-          setValues({ ...values, city: res[0].PostOffice?.[0]?.District });
-          setState(res[0].PostOffice?.[0]?.State || "");
+          setValues({
+            ...values,
+            city: res[0].PostOffice?.[0]?.District || values.city,
+          });
+          setState(res[0].PostOffice?.[0]?.State || state);
         } catch (err: any) {
-          console.log(err);
+          toast.error(err.message);
         }
         setLoading(false);
-      } else {
-        setValues({ ...values, city: "" });
-        setState("");
       }
     })();
   }, [values.pincode]);
 
   async function handleSave(apiEndpoint: string, id: string) {
+    setSaving(true);
     try {
       if (validateAddress(values, state)) {
-        setSaving(true);
+        console.log(state);
         await axios.post(
           apiEndpoint,
           apiEndpoint === "/api/address/editAddress"
-            ? { id, values, state }
-            : { uid: id, values, state },
+            ? { id, values, state: state.value || state }
+            : { uid: id, values, state: state.value || state },
         );
-        setSaving(false);
         toast.success("Address saved successfully");
+        setSaving(false);
         return true;
       }
-    } catch {
-      toast.error("Something went wrong.");
+    } catch (err: any) {
+      toast.error(err.message);
     }
+    setSaving(false);
   }
 
   return {

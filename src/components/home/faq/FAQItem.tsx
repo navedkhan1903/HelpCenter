@@ -19,9 +19,10 @@ export default function FAQItem({ q, a }: { q: string; a: string }) {
     >
       <div className="flex items-center justify-between gap-5">
         <p className="font-bold">{q}</p>
-        <div className={`rotate-${visible ? "180" : "0"} duration-200`}>
-          <BiChevronDown size={25} />
-        </div>
+        <BiChevronDown
+          size={25}
+          className={`rotate-${visible ? "180" : "0"} duration-200`}
+        />
       </div>
 
       <div

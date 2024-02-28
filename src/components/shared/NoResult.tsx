@@ -11,7 +11,7 @@ export default function NoResult({ title, subtitle }: Props) {
     <>
       <LottieWrapper
         options={{
-          loop: true,
+          loop: false,
           autoplay: true,
           animationData: NoResults,
         }}

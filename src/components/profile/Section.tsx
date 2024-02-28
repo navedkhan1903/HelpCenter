@@ -34,9 +34,10 @@ export default function Section({ label, icon, children }: Props) {
           {icon}
           <p className="font-medium">{label}</p>
         </div>
-        <div className={`${visible ? "rotate-180" : "rotate-0"} duration-200`}>
-          <BiChevronDown size={25} />
-        </div>
+        <BiChevronDown
+          size={25}
+          className={`${visible ? "rotate-180" : "rotate-0"} duration-200`}
+        />
       </div>
       <div
         style={{ height: visible ? `${contentHeight}px` : "0" }}

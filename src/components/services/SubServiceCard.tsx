@@ -1,6 +1,6 @@
+import Link from "next/link";
 import Rating from "./Rating";
 import Image from "next/image";
-import Booking from "./Booking";
 
 export default function SubServiceCard({ service }: { service: any }) {
   return (
@@ -29,7 +29,18 @@ export default function SubServiceCard({ service }: { service: any }) {
 
         <div className="mt-7 flex">
           <button className="btn w-full">View Details</button>
-          <Booking />
+          <Link
+            href={`/book-service/${service.title
+              .split(" ")
+              .map(
+                (word: string) =>
+                  word.charAt(0).toLocaleLowerCase() + word.slice(1),
+              )
+              .join("-")}`}
+            className="btn w-full bg-primary hover:bg-primaryDark"
+          >
+            Book Service
+          </Link>
         </div>
       </div>
     </div>

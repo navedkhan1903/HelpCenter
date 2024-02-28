@@ -23,7 +23,7 @@ export default function useSignup() {
         toast.error(
           err.code === "auth/email-already-in-use"
             ? "Email already in use"
-            : "Sign Up failed",
+            : err.message,
         );
         signOut(auth);
       }

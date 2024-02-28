@@ -70,3 +70,28 @@ export const createBreadcrumb = (items: any) => ({
     })),
   }),
 });
+
+export function validateStep(
+  step: number,
+  date: any,
+  selectedSlot: String,
+  selectedAddress: any,
+) {
+  const validations: { [key: number]: () => boolean } = {
+    1: () => date < new Date().setHours(0, 0, 0, 0),
+    2: () => !selectedSlot,
+    3: () => !selectedAddress,
+  };
+
+  if (validations[step] && validations[step]()) {
+    toast.error(
+      step === 1
+        ? "Selected date must be today or a future date"
+        : step === 2
+        ? "Kindly select a suitable slot"
+        : "Kindly select an address",
+    );
+    return false;
+  }
+  return true;
+}

@@ -36,9 +36,9 @@ export default function Footer() {
         />
       </div>
       <div className="h-0.5 bg-gradient-to-r from-darkGray via-gray to-darkGray" />
-      <div className="mt-7 flex items-center justify-center">
-        <BiCopyright color="#f2f2f2" size={15} />
-        <p className="ml-1 text-sm font-semibold text-lightGray">
+      <div className="mt-7 flex items-center justify-center text-sm">
+        <BiCopyright color="#f2f2f2" />
+        <p className="ml-1 font-semibold text-lightGray">
           2023 HelpCenter<sup>TM</sup>. All rights reserved.
         </p>
       </div>

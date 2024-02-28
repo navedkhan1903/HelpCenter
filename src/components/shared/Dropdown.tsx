@@ -3,7 +3,7 @@ import Select from "react-select";
 interface Props {
   options: any;
   onChange: any;
-  value: string;
+  value: any;
 }
 
 export default function DropDown({ options, onChange, value }: Props) {
@@ -13,7 +13,11 @@ export default function DropDown({ options, onChange, value }: Props) {
         placeholder="State"
         options={options}
         onChange={onChange}
-        value={value != "" ? { value: value, label: value } : null}
+        value={
+          value != ""
+            ? { value: value.value || value, label: value.label || value }
+            : null
+        }
         styles={{
           control: (baseStyles, state) => ({
             ...baseStyles,

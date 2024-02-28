@@ -31,9 +31,7 @@ export default function CustomInput({
       />
       {loading ? (
         <button className="btn w-[119.6px] bg-primary">
-          <div className="animate-spin">
-            <CgSpinner size={20} />
-          </div>
+          <CgSpinner size={20} className="animate-spin" />
         </button>
       ) : (
         <button

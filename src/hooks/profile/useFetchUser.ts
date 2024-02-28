@@ -12,8 +12,8 @@ export default function useFetchUser() {
         fetch(`/api/address/addresses/${user?.uid}`).then((res) => res.json()),
       ]);
       setUserDetails(userRes), setAddresses(addressesRes);
-    } catch {
-      toast.error("Soemthing went wrong");
+    } catch (err: any) {
+      toast.error(err.message);
     }
   }
 

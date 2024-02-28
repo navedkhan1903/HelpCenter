@@ -36,12 +36,12 @@ export default function InfoClient({ name }: { name: string }) {
     <>
       <CTABtn
         label="Edit Name"
-        icon={<MdOutlineEdit size={18} />}
+        icon={<MdOutlineEdit />}
         onClick={() => handleModal("name", "open")}
       />
       <CTABtn
         label="Reset Password"
-        icon={<GrPowerReset size={18} />}
+        icon={<GrPowerReset />}
         onClick={() => handleModal("pass", "open")}
       />
       <AnimatePresence>

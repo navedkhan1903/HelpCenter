@@ -60,11 +60,7 @@ export default function NewAddress() {
 
   return (
     <>
-      <CTABtn
-        label="Add New Address"
-        icon={<FaPlus size={18} />}
-        onClick={openModal}
-      />
+      <CTABtn label="Add New Address" icon={<FaPlus />} onClick={openModal} />
       <AnimatePresence>
         {isModalOpen && (
           <Modal

@@ -11,9 +11,7 @@ export default function AuthBtn({ loading, label, onClick }: Props) {
     <>
       {loading ? (
         <div className="btn w-80 bg-primary">
-          <div className="animate-spin">
-            <CgSpinner size={20} />
-          </div>
+          <CgSpinner size={20} className="animate-spin" />
         </div>
       ) : (
         <button

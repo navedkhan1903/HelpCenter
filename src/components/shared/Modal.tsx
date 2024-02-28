@@ -63,9 +63,7 @@ export default function Modal({
               </button>
               {loading ? (
                 <button className="btn w-full bg-primary hover:bg-primaryDark">
-                  <div className="animate-spin">
-                    <CgSpinner size={20} />
-                  </div>
+                  <CgSpinner size={20} className="animate-spin" />
                 </button>
               ) : (
                 <button

@@ -23,8 +23,8 @@ export default function useEditName(
       dispatch(update());
       handleModal("name", "close");
       toast.success("Name changed successfully");
-    } catch {
-      toast.error("Something went wrong");
+    } catch (err: any) {
+      toast.error(err.message);
     }
     setNameSaving(false);
   }

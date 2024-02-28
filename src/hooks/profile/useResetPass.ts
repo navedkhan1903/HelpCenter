@@ -30,8 +30,8 @@ export default function useResetPass(
       handleModal("pass", "close");
       toast.success("Password Reset Successful");
       await signOut(auth);
-    } catch {
-      toast.error("Incorrect Password");
+    } catch (err: any) {
+      toast.error(err.message);
     }
     setPassSaving(false);
   }
