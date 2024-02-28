@@ -17,10 +17,7 @@ export default function RootLayout({
     <html lang="en" className={montserrat.className}>
       <body className="text-darkGray">
         <NavBar />
-        <ReduxProvider>
-          <>{children}</>
-        </ReduxProvider>
-        {/* {children} */}
+        {children}
       </body>
     </html>
   );
