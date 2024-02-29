@@ -1,11 +1,11 @@
 "use client";
 
+import AuthBtn from "./AuthBtn";
 import { useState } from "react";
+import AuthInput from "./AuthInput";
 import { FiMail } from "react-icons/fi";
 import { Toaster } from "react-hot-toast";
 import useLogin from "@/hooks/auth/useLogin";
-import AuthBtn from "@/components/auth/AuthBtn";
-import AuthInput from "@/components/auth/AuthInput";
 import {
   AiOutlineKey,
   AiOutlineEye,

@@ -1,14 +1,14 @@
 "use client";
 
+import Lines from "./Lines";
 import Link from "next/link";
 import Mobile from "./Mobile";
+import NavItem from "./NavItem";
 import Dropdown from "./Dropdown";
 import { auth } from "@/utils/firebase";
 import type { User } from "firebase/auth";
 import { useState, useEffect } from "react";
-import Lines from "@/components/navBar/Lines";
 import { AiOutlineUser } from "react-icons/ai";
-import NavItem from "@/components/navBar/NavItem";
 import { onAuthStateChanged } from "firebase/auth";
 import { motion, AnimatePresence } from "framer-motion";
 

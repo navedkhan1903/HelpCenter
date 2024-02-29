@@ -1,41 +1,39 @@
 "use client";
 
+import "./Calendar.css";
+import Loading from "./Loading";
 import { useState } from "react";
+import CurrStep from "./CurrStep";
+import Skeleton from "./Skeleton";
+import dynamic from "next/dynamic";
 import Calendar from "react-calendar";
 import { motion } from "framer-motion";
-import "@/components/book-service/Calendar.css";
 import { validateStep } from "@/utils/functions";
 import NoResult from "@/components/shared/NoResult";
-import Slots from "@/components/book-service/Slots";
-import Address from "@/components/book-service/Address";
-import CurrStep from "@/components/book-service/CurrStep";
-import Skeleton from "@/components/book-service/Skeleton";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 import NewAddress from "@/components/profile/address/NewAddress";
 import useFetchAddresses from "@/hooks/booking/useFetchAddresses";
+const DynamicSlots = dynamic(() => import("./Slots"), {
+  loading: () => <Loading />,
+});
+const DynamicAddress = dynamic(() => import("./Address"), {
+  loading: () => <Loading />,
+});
 
 export default function BookServiceClient() {
   const [selectedSlot, setSelectedSlot] = useState("");
   const [date, setDate] = useState<any>(new Date());
   const [selectedAddress, setSelectedAddress] = useState();
-  const [step1, setStep1] = useState(true);
-  const [step2, setStep2] = useState(false);
-  const [step3, setStep3] = useState(false);
-  const [step4, setStep4] = useState(false);
+  const [step, setStep] = useState(1);
 
   const { addLoading, addresses } = useFetchAddresses();
 
-  function handleStep(setStepA: any, setStepB: any) {
-    setStepA(false);
-    setStepB(true);
-  }
-
   return (
     <>
-      <CurrStep step1={step1} step2={step2} step3={step3} />
+      <CurrStep step={step} />
 
       <div className="my-14 flex items-center justify-center overflow-y-auto">
-        {step1 ? (
+        {step === 1 ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -44,13 +42,13 @@ export default function BookServiceClient() {
           >
             <Calendar onChange={setDate} value={date} />
           </motion.div>
-        ) : step2 ? (
-          <Slots
+        ) : step === 2 ? (
+          <DynamicSlots
             selectedSlot={selectedSlot}
             setSelectedSlot={setSelectedSlot}
           />
         ) : (
-          <div className="flex h-[335px] w-full flex-col gap-7">
+          <div className="flex h-[335px] w-full flex-col items-center gap-7">
             {addLoading ? (
               <Skeleton />
             ) : addresses?.length === 0 ? (
@@ -63,7 +61,7 @@ export default function BookServiceClient() {
               </>
             ) : (
               <>
-                <Address
+                <DynamicAddress
                   addresses={addresses}
                   selectedAddress={selectedAddress}
                   setSelectedAddress={setSelectedAddress}
@@ -75,15 +73,9 @@ export default function BookServiceClient() {
       </div>
 
       <div className="flex gap-7 md:justify-end">
-        {!step1 && (
+        {step != 1 && (
           <button
-            onClick={() =>
-              step2
-                ? handleStep(setStep2, setStep1)
-                : step3
-                ? handleStep(setStep3, setStep2)
-                : handleStep(setStep4, setStep3)
-            }
+            onClick={() => setStep((curr) => curr - 1)}
             className="btn w-full bg-neutral-100 hover:bg-neutral-200 md:w-auto"
           >
             <FaArrowLeft className="mr-2" />
@@ -92,19 +84,8 @@ export default function BookServiceClient() {
         )}
         <button
           onClick={() => {
-            if (
-              validateStep(
-                step1 ? 1 : step2 ? 2 : 3,
-                date,
-                selectedSlot,
-                selectedAddress,
-              )
-            )
-              step1
-                ? handleStep(setStep1, setStep2)
-                : step2
-                ? handleStep(setStep2, setStep3)
-                : handleStep(setStep3, setStep4);
+            if (validateStep(step, date, selectedSlot, selectedAddress))
+              setStep((curr) => curr + 1);
           }}
           className="btn w-full bg-primary hover:bg-primaryDark md:w-auto"
         >

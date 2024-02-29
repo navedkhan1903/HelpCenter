@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import NewAddress from "../profile/address/NewAddress";
 
 interface Props {
   addresses: any[] | undefined;
@@ -15,7 +14,7 @@ export default function Address({
   return (
     <>
       {addresses?.map((address: any, i: any) => (
-        <div>
+        <div className="w-full">
           <motion.div
             key={i}
             initial={{ opacity: 0 }}
@@ -26,7 +25,7 @@ export default function Address({
               selectedAddress && selectedAddress === i + 1
                 ? "border-[1px] border-darkGray bg-primaryLight"
                 : "border-[1px] border-lightGray"
-            } cursor-pointer rounded-md p-5 font-medium duration-200 hover:bg-primaryLight`}
+            } hover:bg-primaryLigh cursor-pointer rounded-md p-5 font-medium duration-200`}
           >
             <p className="text-xs font-medium text-gray">
               {address.phone}

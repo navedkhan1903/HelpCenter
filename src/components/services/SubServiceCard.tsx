@@ -37,7 +37,7 @@ export default function SubServiceCard({ service }: { service: any }) {
                   word.charAt(0).toLocaleLowerCase() + word.slice(1),
               )
               .join("-")}`}
-            className="btn w-full bg-primary hover:bg-primaryDark"
+            className="btn w-full bg-primary text-center hover:bg-primaryDark"
           >
             Book Service
           </Link>
