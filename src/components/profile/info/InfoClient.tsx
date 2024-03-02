@@ -2,14 +2,18 @@
 
 import CTABtn from "../CTABtn";
 import { useState } from "react";
-import NameModal from "./NameModal";
+import dynamic from "next/dynamic";
 import PassModal from "./PassModal";
 import Modal from "@/components/shared/Modal";
 import { GrPowerReset } from "react-icons/gr";
 import { MdOutlineEdit } from "react-icons/md";
 import { AnimatePresence } from "framer-motion";
+import Loading from "@/components/shared/Loading";
 import useEditName from "@/hooks/profile/useEditName";
 import useResetPass from "@/hooks/profile/useResetPass";
+const DynamicNameModal = dynamic(() => import("./NameModal"), {
+  loading: () => <Loading height={"h-[309.43px]"} />,
+});
 
 export default function InfoClient({ name }: { name: string }) {
   const [isNameModalOpen, setIsNameModalOpen] = useState(false);
@@ -54,7 +58,7 @@ export default function InfoClient({ name }: { name: string }) {
             btnLabel="Save"
             bottomTxt="Your name is visible to Service Providers upon booking a service."
           >
-            <NameModal
+            <DynamicNameModal
               name={name}
               onChange={(e) => setNewName(e.target.value)}
             />

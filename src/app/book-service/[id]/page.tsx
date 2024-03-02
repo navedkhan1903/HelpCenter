@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/footer/Footer";
 import { cleaningServices } from "@/utils/data";
+import Session from "@/components/shared/Session";
 import Header from "@/components/book-service/Header";
 import ReduxProvider from "@/components/shared/ReduxProvider";
 import BookServiceClient from "@/components/book-service/BookServiceClient";
@@ -22,15 +23,17 @@ export default function BookingPage({ params }: { params: any }) {
 
   return (
     <>
-      <Toaster />
-      <div className="mt-[69.71px]">
-        <Header service={services[params.id]} />
-        <div className="mx-auto my-20 w-10/12 rounded-lg md:w-8/12 md:p-14 md:shadow-sm lg:w-6/12">
-          <ReduxProvider>
-            <BookServiceClient />
-          </ReduxProvider>
+      <Toaster containerStyle={{ top: 75 }} />
+      <Session status="authenticated" path="/login">
+        <div className="mt-[69.71px]">
+          <Header service={services[params.id]} />
+          <div className="mx-auto my-20 w-10/12 rounded-lg md:w-8/12 md:p-14 md:shadow-sm lg:w-6/12">
+            <ReduxProvider>
+              <BookServiceClient />
+            </ReduxProvider>
+          </div>
         </div>
-      </div>
+      </Session>
       <Footer />
     </>
   );

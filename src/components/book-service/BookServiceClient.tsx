@@ -1,23 +1,27 @@
 "use client";
 
 import "./Calendar.css";
-import Loading from "./Loading";
+import Loading from "../shared/Loading";
 import { useState } from "react";
 import CurrStep from "./CurrStep";
-import Skeleton from "./Skeleton";
 import dynamic from "next/dynamic";
 import Calendar from "react-calendar";
 import { motion } from "framer-motion";
 import { validateStep } from "@/utils/functions";
-import NoResult from "@/components/shared/NoResult";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 import NewAddress from "@/components/profile/address/NewAddress";
 import useFetchAddresses from "@/hooks/booking/useFetchAddresses";
 const DynamicSlots = dynamic(() => import("./Slots"), {
-  loading: () => <Loading />,
+  loading: () => <Loading height={"h-[335px]"} />,
 });
 const DynamicAddress = dynamic(() => import("./Address"), {
-  loading: () => <Loading />,
+  loading: () => <Loading height={"h-[335px]"} />,
+});
+const DynamicSkeleton = dynamic(() => import("./Skeleton"), {
+  loading: () => <Loading height={"h-[335px]"} />,
+});
+const DynamicNoResult = dynamic(() => import("@/components/shared/NoResult"), {
+  loading: () => <Loading height={"h-[335px]"} />,
 });
 
 export default function BookServiceClient() {
@@ -50,10 +54,10 @@ export default function BookServiceClient() {
         ) : (
           <div className="flex h-[335px] w-full flex-col items-center gap-7">
             {addLoading ? (
-              <Skeleton />
+              <DynamicSkeleton />
             ) : addresses?.length === 0 ? (
               <>
-                <NoResult
+                <DynamicNoResult
                   title="No address found"
                   subtitle="Add a new address by clicking on the button below"
                 />

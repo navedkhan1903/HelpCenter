@@ -11,7 +11,7 @@ export const metadata: Metadata = profileMetadata;
 export default function Profile() {
   return (
     <>
-      <Toaster />
+      <Toaster containerStyle={{ top: 75 }} />
       <Session status="authenticated" path="/login">
         <Wrapper
           title="My Profile"
