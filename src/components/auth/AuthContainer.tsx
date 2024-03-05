@@ -9,13 +9,9 @@ interface Props {
   footerLabel: string;
 }
 
-export default function AuthContainer({
-  children,
-  label,
-  footerText,
-  link,
-  footerLabel,
-}: Props) {
+export default function AuthContainer(props: Props) {
+  const { children, label, footerText, link, footerLabel } = props;
+
   return (
     <div className="mx-auto flex h-[calc(100vh-69.71px)] translate-y-[69.71px] items-center">
       <div className="mx-auto flex flex-col rounded-3xl border-lightGray py-8 md:border-[1px] md:px-10">

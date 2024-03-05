@@ -2,14 +2,18 @@
 
 import CTABtn from "../CTABtn";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { auth } from "@/utils/firebase";
 import { FaPlus } from "react-icons/fa6";
-import AddressModal from "./AddressModal";
 import { useDispatch } from "react-redux";
 import { update } from "@/store/profileSlice";
 import Modal from "@/components/shared/Modal";
 import { AnimatePresence } from "framer-motion";
+import Loading from "@/components/shared/Loading";
 import useAddress from "@/hooks/profile/useAddress";
+const DynamicAddressModal = dynamic(() => import("./AddressModal"), {
+  loading: () => <Loading height={"h-[480px] md:h-[278px]"} />,
+});
 
 export default function NewAddress() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -71,7 +75,7 @@ export default function NewAddress() {
             btnLabel="Save"
             bottomTxt="Your address is shared with Service Providers upon booking a service."
           >
-            <AddressModal
+            <DynamicAddressModal
               onPhoneChange={(e) =>
                 setValues({ ...values, phone: e.target.value })
               }

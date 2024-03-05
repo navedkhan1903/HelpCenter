@@ -79,7 +79,13 @@ export function validateStep(
 ) {
   const validations: { [key: number]: () => boolean } = {
     1: () => date < new Date().setHours(0, 0, 0, 0),
-    2: () => !selectedSlot,
+    2: () =>
+      !selectedSlot ||
+      (date.getDate() === new Date().getDate() &&
+        ((selectedSlot === "Morning" && new Date().getHours() >= 12) ||
+          (selectedSlot === "Afternoon" && new Date().getHours() >= 15) ||
+          (selectedSlot === "Evening" && new Date().getHours() >= 18) ||
+          (selectedSlot === "Night" && new Date().getHours() >= 21))),
     3: () => !selectedAddress,
   };
 

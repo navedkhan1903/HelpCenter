@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { timeSlots } from "@/utils/data";
 
 interface Props {
-  selectedSlot: String;
+  selectedSlot: {};
   setSelectedSlot: any;
 }
 

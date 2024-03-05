@@ -28,7 +28,7 @@ export default function ProfileClient() {
 
   useEffect(() => {
     (async () => await fetchData(user))();
-  }, [profileUpdated]);
+  }, [profileUpdated, user]);
 
   return (
     <>

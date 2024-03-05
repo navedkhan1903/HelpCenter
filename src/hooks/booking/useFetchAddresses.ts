@@ -2,6 +2,7 @@ import toast from "react-hot-toast";
 import { auth } from "@/utils/firebase";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
 
 export default function useFetchAddresses() {
   const [addLoading, setAddLoading] = useState(false);
@@ -12,7 +13,9 @@ export default function useFetchAddresses() {
   );
 
   useEffect(() => {
-    fetchData();
+    onAuthStateChanged(auth, async (user) => {
+      if (user) fetchData();
+    });
   }, []);
 
   useEffect(() => {

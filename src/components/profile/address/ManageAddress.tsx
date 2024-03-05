@@ -1,16 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import DeleteModal from "./DeleteModal";
+import dynamic from "next/dynamic";
 import { FiTrash } from "react-icons/fi";
-import AddressModal from "./AddressModal";
 import { useDispatch } from "react-redux";
 import Modal from "@/components/shared/Modal";
 import { update } from "@/store/profileSlice";
 import { MdOutlineEdit } from "react-icons/md";
 import { AnimatePresence } from "framer-motion";
+import Loading from "@/components/shared/Loading";
 import useAddress from "@/hooks/profile/useAddress";
 import useDeleteAddress from "@/hooks/profile/useDeleteAddress";
+const DynamicAddressModal = dynamic(() => import("./AddressModal"), {
+  loading: () => <Loading height={"h-[480px] md:h-[278px]"} />,
+});
+const DynamicDeleteModal = dynamic(() => import("./DeleteModal"), {
+  loading: () => <Loading height={"h-[358px]"} />,
+});
 
 export default function ManageAddress({ address }: { address: any }) {
   const [editModal, setEditModal] = useState(false);
@@ -77,7 +83,7 @@ export default function ManageAddress({ address }: { address: any }) {
             btnLabel="Save"
             bottomTxt="Your address is shared with Service Providers upon booking a service."
           >
-            <AddressModal
+            <DynamicAddressModal
               onPhoneChange={(e) =>
                 setValues({ ...values, phone: e.target.value })
               }
@@ -112,7 +118,7 @@ export default function ManageAddress({ address }: { address: any }) {
             btnLabel="Delete"
             bottomTxt="Are you sure you want to delete this address?"
           >
-            <DeleteModal address={address} />
+            <DynamicDeleteModal address={address} />
           </Modal>
         )}
       </AnimatePresence>

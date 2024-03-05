@@ -6,11 +6,9 @@ interface Props {
   setSelectedAddress: any;
 }
 
-export default function Address({
-  addresses,
-  selectedAddress,
-  setSelectedAddress,
-}: Props) {
+export default function Address(props: Props) {
+  const { addresses, selectedAddress, setSelectedAddress } = props;
+
   return (
     <>
       {addresses?.map((address: any, i: any) => (

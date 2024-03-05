@@ -3,7 +3,6 @@
 import CTABtn from "../CTABtn";
 import { useState } from "react";
 import dynamic from "next/dynamic";
-import PassModal from "./PassModal";
 import Modal from "@/components/shared/Modal";
 import { GrPowerReset } from "react-icons/gr";
 import { MdOutlineEdit } from "react-icons/md";
@@ -13,6 +12,9 @@ import useEditName from "@/hooks/profile/useEditName";
 import useResetPass from "@/hooks/profile/useResetPass";
 const DynamicNameModal = dynamic(() => import("./NameModal"), {
   loading: () => <Loading height={"h-[309.43px]"} />,
+});
+const DynamicPassModal = dynamic(() => import("./PassModal"), {
+  loading: () => <Loading height={"h-[362.86px]"} />,
 });
 
 export default function InfoClient({ name }: { name: string }) {
@@ -73,7 +75,7 @@ export default function InfoClient({ name }: { name: string }) {
             btnLabel="Reset"
             bottomTxt="You'll get logged out after resetting the password."
           >
-            <PassModal
+            <DynamicPassModal
               onOldChange={(e) => setOldPass(e.target.value)}
               onNewChange={(e) => setNewPass(e.target.value)}
             />
