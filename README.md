@@ -2,6 +2,10 @@
 
 HelpCenter is a cutting-edge on-demand services portal designed to revolutionize the way users access essential services. Our platform offers a diverse range of on-demand services including home services, laundry and dry cleaning, e-learning and home tuition, beauty and wellness treatments, event management, grocery delivery, and mechanical services. With a user-centric approach, HelpCenter ensures seamless access to these services through intuitive interfaces and robust functionalities.
 
+## Live Link
+
+https://helpcenter-web.vercel.app/
+
 ## Tech Stack
 
 **Frontend Technologies:**
@@ -46,10 +50,6 @@ HelpCenter is a cutting-edge on-demand services portal designed to revolutionize
 
 - Protected Routes
 - Custom Hooks
-
-## Live Link
-
-https://helpcenter-web.vercel.app/
 
 ## Features
 
