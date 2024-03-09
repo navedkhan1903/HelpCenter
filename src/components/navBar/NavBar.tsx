@@ -77,7 +77,7 @@ export default function NavBar() {
               onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)}
               onClick={() => setDropdown(false)}
-              className="absolute right-[8vw] top-[69px] w-48 rounded-xl bg-white p-3 shadow-lg"
+              className="absolute right-[8vw] top-[69px] w-52 rounded-xl bg-white p-3 shadow-lg"
             >
               <Dropdown />
             </motion.div>

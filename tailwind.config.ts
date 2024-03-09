@@ -11,9 +11,9 @@ const config: Config = {
       colors: {
         primary: "#FFD369",
         primaryLight: "#fff7e6",
-        lightGray: "#e6e6e6",
         primaryDark: "#ffc94d",
         gray: "#767676",
+        lightGray: "#e6e6e6",
         darkGray: "#1a1a1a",
       },
       boxShadow: {

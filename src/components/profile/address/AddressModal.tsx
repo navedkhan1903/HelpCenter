@@ -71,7 +71,12 @@ export default function AddressModal({
               onChange={onCityChange}
               value={values.city}
             />
-            <DropDown options={states} onChange={onStateChange} value={state} />
+            <DropDown
+              options={states}
+              onChange={onStateChange}
+              value={state}
+              placeholder="State"
+            />
           </>
         )}
       </div>

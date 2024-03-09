@@ -4,13 +4,16 @@ interface Props {
   options: any;
   onChange: any;
   value: any;
+  placeholder: string;
 }
 
-export default function DropDown({ options, onChange, value }: Props) {
+export default function DropDown(props: Props) {
+  const { options, onChange, value, placeholder } = props;
+
   return (
     <div className="w-full">
       <Select
-        placeholder="State"
+        placeholder={placeholder}
         options={options}
         onChange={onChange}
         value={

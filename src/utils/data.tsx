@@ -335,14 +335,9 @@ export const states = [
 export const navbarDropdown = [
   { href: "/profile", icon: <AiOutlineUser size={18} />, label: "My Profile" },
   {
-    href: "/active",
+    href: "/booked-services",
     icon: <HiOutlineWrenchScrewdriver size={18} />,
-    label: "Active Services",
-  },
-  {
-    href: "/history",
-    icon: <AiOutlineHistory size={18} />,
-    label: "Service History",
+    label: "Booked Services",
   },
   { href: "/saved", icon: <BsBookmark size={18} />, label: "Saved Services" },
   {
@@ -380,6 +375,33 @@ export const timeSlots = [
     time: "6PM - 9PM",
   },
 ];
+
+export const servicesOptions = [
+  { label: "Appliance Cleaning", value: "Appliance Cleaning" },
+  { label: "Carpet Cleaning", value: "Carpet Cleaning" },
+  { label: "House Cleaning", value: "House Cleaning" },
+];
+
+export const slotOptions = [
+  { label: "Morning", value: "Morning" },
+  { label: "Afternoon", value: "Afternoon" },
+  { label: "Evening", value: "Evening" },
+  { label: "Night", value: "Night" },
+];
+
+export const activeStatusOptions = [
+  { label: "Booked", value: "Booked" },
+  { label: "In Progress", value: "In Progress" },
+  { label: "Completed", value: "Completed" },
+  { label: "Cancelled", value: "Cancelled" },
+];
+
+export const statusColors: any = {
+  Booked: "bg-teal-100 text-teal-700",
+  "In Progress": "bg-orange-100 text-orange-700",
+  Completed: "bg-green-100 text-green-700",
+  Cancelled: "bg-red-100 text-red-700",
+};
 
 export const homeServices = [
   {
