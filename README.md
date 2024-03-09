@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# HelpCenter - On Demand Services Portal
 
-First, run the development server:
+HelpCenter is a cutting-edge on-demand services portal designed to revolutionize the way users access essential services. Our platform offers a diverse range of on-demand services including home services, laundry and dry cleaning, e-learning and home tuition, beauty and wellness treatments, event management, grocery delivery, and mechanical services. With a user-centric approach, HelpCenter ensures seamless access to these services through intuitive interfaces and robust functionalities.
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Frontend Technologies:**
+- Next.js Framework
+- TypeScript
+- Tailwind CSS
+- React Hot Toast
+- Framer Motion
+- React Icons
+- Lottie Files Animation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Backend Technologies:**
+- Next.js
+- MongoDB
+- Firebase Authentication
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Deployment & Version Control:**
+- Vercel Hosting
+- Git
+- GitHub
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Performance Optimization:**
+- Image Optimization
+- Font Optimization
+- Caching
+- Lazy Loading
+- Server-Side Rendering
+- Static Site Generation
 
-## Learn More
+**SEO and Social Integration:**
+- OpenGraph Protocol
+- JSON-LD Structured Data
+- Breadcrumbs
 
-To learn more about Next.js, take a look at the following resources:
+**Miscellaneous:**
+- Protected Routes
+- Custom Hooks
+## Live Link
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+https://helpcenter-web.vercel.app/
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- User Authentication
+- Booking & Scheduling
+- Search Functionality
+- Notification System
+- Profile Management
+- Search Engine Optimisation
+- Performance Optimization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Color Reference
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Primary | ![#FFD369](https://via.placeholder.com/10/FFD369?text=+) #FFD369 |
+| Primary Light | ![#fff7e6](https://via.placeholder.com/10/fff7e6?text=+) #fff7e6 |
+| Primary Dark | ![#ffc94d](https://via.placeholder.com/10/ffc94d?text=+) #ffc94d |
+| Gray | ![#767676](https://via.placeholder.com/10/767676?text=+) #767676 |
+| Light Gray | ![#e6e6e6](https://via.placeholder.com/10/e6e6e6?text=+) #e6e6e6 |
+| Dark Gray | ![#1a1a1a](https://via.placeholder.com/10/1a1a1a?text=+) #1a1a1a |
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at navedkhan19032002@gmail.com.
+
