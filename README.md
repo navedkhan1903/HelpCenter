@@ -27,7 +27,7 @@ https://helpcenter-web.vercel.app/
 
 **Deployment & Version Control:**
 
-- Vercel Hosting
+- Vercel
 - Git
 - GitHub
 
@@ -45,6 +45,11 @@ https://helpcenter-web.vercel.app/
 - OpenGraph Protocol
 - JSON-LD Structured Data
 - Breadcrumbs
+
+**Design Principles:**
+
+- SOLID
+- DRY
 
 **Miscellaneous:**
 
