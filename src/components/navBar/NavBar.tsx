@@ -47,7 +47,7 @@ export default function NavBar() {
 
         {user ? (
           <div
-            className="absolute right-[8vw] flex h-[68px] w-48 items-center justify-end"
+            className="absolute right-[8vw] flex h-[100px] w-52 items-center justify-end"
             onMouseLeave={() => setDropdown(false)}
           >
             <button
@@ -77,7 +77,7 @@ export default function NavBar() {
               onMouseEnter={() => setDropdown(true)}
               onMouseLeave={() => setDropdown(false)}
               onClick={() => setDropdown(false)}
-              className="absolute right-[8vw] top-[69px] w-52 rounded-xl bg-white p-3 shadow-lg"
+              className="absolute right-[8vw] top-[75px] w-52 rounded-xl bg-white p-3 shadow-lg"
             >
               <Dropdown />
             </motion.div>

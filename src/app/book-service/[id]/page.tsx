@@ -29,7 +29,7 @@ export default function BookingPage({ params }: { params: any }) {
           <Header service={services[params.id]} />
           <div className="mx-auto my-20 w-10/12 rounded-lg md:w-8/12 md:p-14 lg:w-6/12">
             <ReduxProvider>
-              <BookServiceClient />
+              <BookServiceClient service={services[params.id].title} />
             </ReduxProvider>
           </div>
         </div>

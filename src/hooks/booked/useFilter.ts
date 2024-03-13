@@ -8,12 +8,16 @@ export default function useFilter({ servicesData }: Props) {
   const [service, setService] = useState<any>("");
   const [slot, setSlot] = useState<any>("");
   const [status, setStatus] = useState<any>("");
-  const [filteredServices, setFilteredService] = useState(servicesData);
+  const [filteredServices, setFilteredService] = useState();
+
+  useEffect(() => {
+    setFilteredService(servicesData);
+  }, [servicesData]);
 
   useEffect(() => {
     if (service) {
       setFilteredService(
-        servicesData.filter((item: any) => item.title === service.label),
+        servicesData.filter((item: any) => item.service === service.label),
       );
       setSlot("");
       setStatus("");

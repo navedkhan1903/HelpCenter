@@ -43,6 +43,7 @@ import home_improvement from "../../public/home_improvement.jpg";
 import house_cleaning from "../../public/house_cleaning.jpg";
 import carpet_cleaning from "../../public/carpet_cleaning.jpg";
 import appliance_cleaning from "../../public/appliance_cleaning.jpg";
+import { FaSort, FaSortDown, FaSortUp } from "react-icons/fa";
 
 export const features = [
   {
@@ -392,16 +393,34 @@ export const slotOptions = [
 export const activeStatusOptions = [
   { label: "Booked", value: "Booked" },
   { label: "In Progress", value: "In Progress" },
-  { label: "Completed", value: "Completed" },
+  { label: "Finished", value: "Finished" },
   { label: "Cancelled", value: "Cancelled" },
 ];
 
 export const statusColors: any = {
-  Booked: "bg-teal-100 text-teal-700",
-  "In Progress": "bg-orange-100 text-orange-700",
-  Completed: "bg-green-100 text-green-700",
-  Cancelled: "bg-red-100 text-red-700",
+  Booked: {
+    color: "#0f766e",
+    bg: "#ccfbf1",
+  },
+  "In Progress": {
+    color: "#c2410c",
+    bg: "#ffedd5",
+  },
+  Finished: {
+    color: "#15803d",
+    bg: "#dcfce7",
+  },
+  Cancelled: {
+    color: "#b91c1c",
+    bg: "#fee2e2",
+  },
 };
+
+export const sortIcon = [
+  <FaSort color="#767676" />,
+  <FaSortDown />,
+  <FaSortUp />,
+];
 
 export const homeServices = [
   {

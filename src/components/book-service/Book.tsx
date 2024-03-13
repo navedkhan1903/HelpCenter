@@ -4,21 +4,27 @@ import { useEffect, useState } from "react";
 import Success from "@/lotties/Success.json";
 import LottieWrapper from "../shared/LottieWrapper";
 
-export default function Book({ setStep }: { setStep: any }) {
-  const [booked, setBooked] = useState(false);
+interface Props {
+  setStep: any;
+  booked: Boolean;
+  error: Boolean;
+}
+
+export default function Book({ setStep, booked, error }: Props) {
   const [sec, setSec] = useState(1);
 
   useEffect(() => {
-    setTimeout(() => setBooked(true), 5000);
-  }, []);
+    if (error) setStep(3);
+  }, [error]);
 
   useEffect(() => {
     const intervalId = setInterval(
       () => setSec((curr) => (curr % 3) + 1),
       1000,
     );
+    if (booked) clearInterval(intervalId);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [booked]);
 
   return (
     <div className="flex h-[539px] flex-col items-center justify-center">
@@ -43,16 +49,13 @@ export default function Book({ setStep }: { setStep: any }) {
       </p>
       {booked ? (
         <Link
-          href={"/active-services"}
+          href={"/booked-services"}
           className="btn mt-10 bg-primary hover:bg-primaryDark"
         >
-          View Active Services
+          View Booked Services
         </Link>
       ) : (
-        <button
-          onClick={() => setStep(3)}
-          className="btn mt-10 bg-red-100 text-red-700 hover:bg-red-200"
-        >
+        <button className="btn mt-10 bg-red-100 text-red-700 hover:bg-red-200">
           Cancel
         </button>
       )}

@@ -34,7 +34,6 @@ export default function useAddress(initialValues: any, initialState: string) {
     setSaving(true);
     try {
       if (validateAddress(values, state)) {
-        console.log(state);
         await axios.post(
           apiEndpoint,
           apiEndpoint === "/api/address/editAddress"

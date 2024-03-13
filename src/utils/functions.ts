@@ -101,3 +101,16 @@ export function validateStep(
   }
   return true;
 }
+
+export function formatDate(date: Date) {
+  return `${date.getDate().toString().padStart(2, "0")}/${(date.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}/${date.getFullYear()}`;
+}
+
+export function formatTime(date: Date) {
+  return `${(date.getHours() % 12 || 12).toString().padStart(2, "0")}:${date
+    .getMinutes()
+    .toString()
+    .padStart(2, "0")} ${date.getHours() >= 12 ? "PM" : "AM"}`;
+}

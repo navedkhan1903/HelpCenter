@@ -1,14 +1,15 @@
 "use client";
 
 import "./Calendar.css";
-import { useState } from "react";
 import CurrStep from "./CurrStep";
 import dynamic from "next/dynamic";
 import Calendar from "react-calendar";
 import { motion } from "framer-motion";
 import Loading from "../shared/Loading";
+import { useEffect, useState } from "react";
 import { validateStep } from "@/utils/functions";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
+import useBookService from "@/hooks/booking/useBookService";
 import NewAddress from "@/components/profile/address/NewAddress";
 import useFetchAddresses from "@/hooks/booking/useFetchAddresses";
 const DynamicBook = dynamic(() => import("./Book"), {
@@ -27,13 +28,19 @@ const DynamicNoResult = dynamic(() => import("@/components/shared/NoResult"), {
   loading: () => <Loading height={"h-[335px]"} />,
 });
 
-export default function BookServiceClient() {
-  const [selectedSlot, setSelectedSlot] = useState("");
+export default function BookServiceClient({ service }: { service: String }) {
   const [date, setDate] = useState<any>(new Date());
-  const [selectedAddress, setSelectedAddress] = useState();
+  const [selectedSlot, setSelectedSlot] = useState("");
+  const [selectedAddress, setSelectedAddress] = useState(0);
   const [step, setStep] = useState(1);
 
   const { addLoading, addresses } = useFetchAddresses();
+  const { handleBook, booked, error } = useBookService();
+
+  useEffect(() => {
+    if (step === 4)
+      handleBook(service, date, selectedSlot, addresses?.[selectedAddress - 1]);
+  }, [step]);
 
   return (
     <>
@@ -104,7 +111,7 @@ export default function BookServiceClient() {
           </div>
         </>
       ) : (
-        <DynamicBook setStep={setStep} />
+        <DynamicBook setStep={setStep} booked={booked} error={error} />
       )}
     </>
   );
