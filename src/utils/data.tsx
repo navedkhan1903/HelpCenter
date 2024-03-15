@@ -43,7 +43,6 @@ import home_improvement from "../../public/home_improvement.jpg";
 import house_cleaning from "../../public/house_cleaning.jpg";
 import carpet_cleaning from "../../public/carpet_cleaning.jpg";
 import appliance_cleaning from "../../public/appliance_cleaning.jpg";
-import { FaSort, FaSortDown, FaSortUp } from "react-icons/fa";
 
 export const features = [
   {
@@ -415,12 +414,6 @@ export const statusColors: any = {
     bg: "#fee2e2",
   },
 };
-
-export const sortIcon = [
-  <FaSort color="#767676" />,
-  <FaSortDown />,
-  <FaSortUp />,
-];
 
 export const homeServices = [
   {

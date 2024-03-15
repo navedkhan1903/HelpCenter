@@ -10,6 +10,8 @@ export default function useFilter({ servicesData }: Props) {
   const [status, setStatus] = useState<any>("");
   const [filteredServices, setFilteredService] = useState();
 
+  console.log(filteredServices);
+
   useEffect(() => {
     setFilteredService(servicesData);
   }, [servicesData]);
@@ -59,6 +61,7 @@ export default function useFilter({ servicesData }: Props) {
     setService,
     setSlot,
     setStatus,
+    setFilteredService,
     handleReset,
   };
 }
