@@ -1,11 +1,10 @@
 import "./globals.css";
-import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import NavBar from "@/components/navBar/NavBar";
 import { mainMetadata } from "@/utils/metadata";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
-export const metadata: Metadata = mainMetadata;
+export const metadata = mainMetadata;
 
 export default function RootLayout({
   children,
