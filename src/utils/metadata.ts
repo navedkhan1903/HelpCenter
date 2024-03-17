@@ -90,7 +90,6 @@ export const cleaningMetadata = {
   openGraph: {
     title: cleaningTitle,
     description: cleaningDesc,
-    url: "https://helpcenter-web.vercel.app/services/home/cleaning",
     images: [{ url: cleaning.src }],
   },
   twitter: {
