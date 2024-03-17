@@ -15,11 +15,10 @@ export default function useFetchBookings() {
 
   async function fetchBookings() {
     try {
-      setBookings(
-        await fetch(`/api/bookings/${auth.currentUser?.uid}`).then((res) =>
-          res.json(),
-        ),
+      const res = await fetch(`/api/bookings/${auth.currentUser?.uid}`).then(
+        (res) => res.json(),
       );
+      setBookings(res.reverse());
     } catch (err: any) {
       toast.error(err.message);
     }

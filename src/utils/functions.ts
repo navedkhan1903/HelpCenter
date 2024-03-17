@@ -114,3 +114,26 @@ export function formatTime(date: Date) {
     .toString()
     .padStart(2, "0")} ${date.getHours() >= 12 ? "PM" : "AM"}`;
 }
+
+export function generateMetadata(
+  title: String,
+  desc: String,
+  url: String,
+  src: any,
+) {
+  return {
+    title: title,
+    description: desc,
+    openGraph: {
+      title: title,
+      description: desc,
+      url: url,
+      images: [{ url: src }],
+    },
+    twitter: {
+      title: title,
+      description: desc,
+      images: [src],
+    },
+  };
+}

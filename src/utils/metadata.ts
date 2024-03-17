@@ -1,5 +1,30 @@
 import home from "../../public/home.jpg";
+import { generateMetadata } from "./functions";
 import cleaning from "../../public/cleaning.jpg";
+import house from "../../public/house_cleaning.jpg";
+import carpet from "../../public/carpet_cleaning.jpg";
+import appliance from "../../public/appliance_cleaning.jpg";
+
+export const applianceCleaningMetadata = generateMetadata(
+  "Applince Cleaning - HelpCenter",
+  "Revitalize your appliances with expert cleaning services: refrigerators, ovens, dishwashers, microwaves, and washing machines.",
+  "https://helpcenter-web.vercel.app/book-service/appliance-cleaning",
+  appliance.src,
+);
+
+export const carpetCleaningMetadata = generateMetadata(
+  "Carpet Cleaning - HelpCenter",
+  "Refresh your carpets with professional services: deep steam cleaning, stain removal, shampooing, deodorizing, and protection.",
+  "https://helpcenter-web.vercel.app/book-service/carpet-cleaning",
+  carpet.src,
+);
+
+export const houseCleaningMetadata = generateMetadata(
+  "House Cleaning - HelpCenter",
+  "Transform your home with top-quality services: regular cleaning, deep cleaning, kitchen, bathroom, and window cleaning.",
+  "https://helpcenter-web.vercel.app/book-service/house-cleaning",
+  house.src,
+);
 
 const loginTitle = "Login - HelpCenter";
 const loginDesc =
