@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
+import { staticMeta } from "@/utils/data";
+import { staticServices } from "@/utils/data";
 import Footer from "@/components/footer/Footer";
-import { cleaningServices } from "@/utils/data";
 import Session from "@/components/shared/Session";
 import Header from "@/components/book-service/Header";
 import ReduxProvider from "@/components/shared/ReduxProvider";
@@ -14,22 +15,20 @@ export function generateStaticParams() {
   ];
 }
 
-export default function BookingPage({ params }: { params: any }) {
-  const services: { [key: string]: any } = {
-    "appliance-cleaning": cleaningServices[0],
-    "carpet-cleaning": cleaningServices[1],
-    "house-cleaning": cleaningServices[2],
-  };
+export function generateMetadata({ params }: { params: any }) {
+  staticMeta[params.id];
+}
 
+export default function BookingPage({ params }: { params: any }) {
   return (
     <>
       <Toaster containerStyle={{ top: 75 }} />
       <Session status="authenticated" path="/login">
         <div className="mt-[69.71px]">
-          <Header service={services[params.id]} />
+          <Header service={staticServices[params.id]} />
           <div className="mx-auto my-20 w-10/12 rounded-lg md:w-8/12 md:p-14 lg:w-6/12">
             <ReduxProvider>
-              <BookServiceClient service={services[params.id].title} />
+              <BookServiceClient service={staticServices[params.id].title} />
             </ReduxProvider>
           </div>
         </div>

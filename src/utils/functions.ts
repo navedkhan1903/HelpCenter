@@ -119,7 +119,7 @@ export function generateMetadata(
   title: String,
   desc: String,
   url: String,
-  src: any,
+  images: any,
 ) {
   return {
     title: title,
@@ -128,12 +128,12 @@ export function generateMetadata(
       title: title,
       description: desc,
       url: url,
-      images: [{ url: src }],
+      images: [{ url: images.src }],
     },
     twitter: {
       title: title,
       description: desc,
-      images: [src],
+      images: [images.src],
     },
   };
 }

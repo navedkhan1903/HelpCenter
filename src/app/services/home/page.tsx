@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { homeServices } from "@/utils/data";
 import Wrapper from "@/components/shared/Wrapper";
 import { homeServicesMetadata } from "@/utils/metadata";
@@ -6,7 +5,7 @@ import { homeServicesBreadcrumb } from "@/utils/scripts";
 import ServiceCard from "@/components/services/ServiceCard";
 import Breadcrumbs from "@/components/services/Breadcrumbs";
 
-export const metadata: Metadata = homeServicesMetadata;
+export const metadata = homeServicesMetadata;
 
 export default function HomeServices() {
   return (

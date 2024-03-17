@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
 import { loginMetadata } from "@/utils/metadata";
 import Session from "@/components/shared/Session";
 import LoginClient from "@/components/auth/LoginClient";
 import AuthContainer from "@/components/auth/AuthContainer";
 
-export const metadata: Metadata = loginMetadata;
+export const metadata = loginMetadata;
 
 export default function Login() {
   return (

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { cleaningServices } from "@/utils/data";
 import Wrapper from "@/components/shared/Wrapper";
@@ -7,7 +6,7 @@ import { cleaningBreadcrumb } from "@/utils/scripts";
 import Breadcrumbs from "@/components/services/Breadcrumbs";
 import SubServiceCard from "@/components/services/SubServiceCard";
 
-export const metadata: Metadata = cleaningMetadata;
+export const metadata = cleaningMetadata;
 
 export default function Cleaning() {
   return (

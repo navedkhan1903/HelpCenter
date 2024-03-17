@@ -1,48 +1,41 @@
 import Chat from "@/lotties/Chat.json";
-import Rocket from "@/lotties/Rocket.json";
-import Discount from "@/lotties/Discount.json";
-import HourGlass from "@/lotties/HourGlass.json";
-import LottieWrapper from "@/components/shared/LottieWrapper";
-
+import { signOut } from "firebase/auth";
+import { auth } from "@/utils/firebase";
+import { GoMoon } from "react-icons/go";
 import home from "../../public/home.jpg";
+import tech from "../../public/tech.jpg";
+import Rocket from "@/lotties/Rocket.json";
 import event from "../../public/event.jpg";
+import suraj from "../../public/suraj.jpeg";
+import { BsBookmark } from "react-icons/bs";
 import beauty from "../../public/beauty.jpg";
+import google from "../../public/google.png";
+import garden from "../../public/garden.jpg";
+import Discount from "@/lotties/Discount.json";
 import grocery from "../../public/grocery.jpg";
+import kuldeep from "../../public/kuldeep.jpeg";
+import HourGlass from "@/lotties/HourGlass.json";
 import laundary from "../../public/laundary.jpg";
 import learning from "../../public/learning.jpg";
 import mechanic from "../../public/mechanic.jpg";
-
-import suraj from "../../public/suraj.jpeg";
-import kuldeep from "../../public/kuldeep.jpeg";
-
-import google from "../../public/google.png";
-import facebook from "../../public/facebook.png";
-
-import { signOut } from "firebase/auth";
-import { auth } from "@/utils/firebase";
-import { BsBookmark } from "react-icons/bs";
-import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
-import {
-  AiOutlineUser,
-  AiOutlineHistory,
-  AiOutlineLogout,
-  AiOutlineBell,
-} from "react-icons/ai";
-
-import { GoMoon } from "react-icons/go";
 import { IoSunnyOutline } from "react-icons/io5";
-import { WiSunrise, WiSunset } from "react-icons/wi";
-
-import tech from "../../public/tech.jpg";
-import garden from "../../public/garden.jpg";
+import facebook from "../../public/facebook.png";
 import cleaning from "../../public/cleaning.jpg";
 import handyman from "../../public/handyman.jpg";
+import { WiSunrise, WiSunset } from "react-icons/wi";
 import maintainance from "../../public/maintainance.jpg";
-import home_improvement from "../../public/home_improvement.jpg";
-
+import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
 import house_cleaning from "../../public/house_cleaning.jpg";
+import LottieWrapper from "@/components/shared/LottieWrapper";
 import carpet_cleaning from "../../public/carpet_cleaning.jpg";
+import home_improvement from "../../public/home_improvement.jpg";
 import appliance_cleaning from "../../public/appliance_cleaning.jpg";
+import { AiOutlineUser, AiOutlineLogout, AiOutlineBell } from "react-icons/ai";
+import {
+  applianceCleaningMetadata,
+  carpetCleaningMetadata,
+  houseCleaningMetadata,
+} from "@/utils/metadata";
 
 export const features = [
   {
@@ -528,3 +521,15 @@ export const cleaningServices = [
     tags: "housecleaning cleaning house deepcleaning kitchen bathroom window blind regular service quality price rating count home tidy neat scrub shine sanitize dust mop vacuum wipe spotless efficient professional organized thorough quick affordable reliable experienced team satisfaction detail fresh sparkling hygienic fast expert household chores checklist solution routine pristine grime spot bacteria",
   },
 ];
+
+export const staticServices: { [key: string]: any } = {
+  "appliance-cleaning": cleaningServices[0],
+  "carpet-cleaning": cleaningServices[1],
+  "house-cleaning": cleaningServices[2],
+};
+
+export const staticMeta: any = {
+  "appliance-cleaning": applianceCleaningMetadata,
+  "carpet-cleaning": carpetCleaningMetadata,
+  "house-cleaning": houseCleaningMetadata,
+};
