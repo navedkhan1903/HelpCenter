@@ -16,7 +16,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: any }) {
-  staticMeta[params.id];
+  return staticMeta[params.id];
 }
 
 export default function BookingPage({ params }: { params: any }) {
