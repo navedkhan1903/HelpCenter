@@ -30,7 +30,7 @@ export default function Filter(props: Props) {
       <div className="flex w-full justify-between md:w-auto">
         <div
           onClick={() => setVisible((curr) => !curr)}
-          className="flex items-center gap-2 text-sm font-semibold"
+          className="flex h-[46px] items-center gap-2 text-sm font-semibold"
         >
           <IoFilter />
           Filter
@@ -39,18 +39,20 @@ export default function Filter(props: Props) {
             className={`rotate-${visible ? "180" : "0"} duration-200 md:hidden`}
           />
         </div>
-        <button
-          onClick={handleReset}
-          className="rounded-full bg-neutral-100 p-4 text-sm duration-200 hover:bg-neutral-200 md:hidden"
-        >
-          <GrPowerReset />
-        </button>
+        {visible && (
+          <button
+            onClick={handleReset}
+            className="rounded-full bg-neutral-100 p-4 text-sm duration-200 hover:bg-neutral-200 md:hidden"
+          >
+            <GrPowerReset />
+          </button>
+        )}
       </div>
       <div
         className={`${
           visible
             ? "h-[181px] opacity-100 md:h-auto"
-            : "h-0 overflow-hidden opacity-0 md:h-auto"
+            : "h-0 overflow-hidden opacity-0 md:h-auto md:opacity-100"
         } flex w-full flex-col items-center gap-5 duration-200 md:flex-row md:gap-10 md:overflow-visible`}
       >
         <DropDown
