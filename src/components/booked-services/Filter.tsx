@@ -28,11 +28,13 @@ export default function Filter(props: Props) {
   return (
     <div className="mb-5 flex flex-col gap-5 rounded-md md:flex-row md:gap-10">
       <div className="flex w-full justify-between md:w-auto">
-        <div className="flex items-center gap-2 text-sm font-semibold">
+        <div
+          onClick={() => setVisible((curr) => !curr)}
+          className="flex items-center gap-2 text-sm font-semibold"
+        >
           <IoFilter />
           Filter
           <BiChevronDown
-            onClick={() => setVisible((curr) => !curr)}
             size={25}
             className={`rotate-${visible ? "180" : "0"} duration-200 md:hidden`}
           />
@@ -46,8 +48,10 @@ export default function Filter(props: Props) {
       </div>
       <div
         className={`${
-          visible ? "h-[181px] md:h-auto" : "h-0 md:h-auto"
-        } flex w-full flex-col items-center gap-5 overflow-hidden duration-200 md:flex-row md:gap-10 md:overflow-visible`}
+          visible
+            ? "h-[181px] opacity-100 md:h-auto"
+            : "h-0 overflow-hidden opacity-0 md:h-auto"
+        } flex w-full flex-col items-center gap-5 duration-200 md:flex-row md:gap-10 md:overflow-visible`}
       >
         <DropDown
           options={servicesOptions}
