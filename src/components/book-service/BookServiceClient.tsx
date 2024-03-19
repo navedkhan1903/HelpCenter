@@ -82,6 +82,7 @@ export default function BookServiceClient({ service }: { service: String }) {
                       selectedAddress={selectedAddress}
                       setSelectedAddress={setSelectedAddress}
                     />
+                    <NewAddress />
                   </>
                 )}
               </div>

@@ -28,15 +28,18 @@ export function generateMetadata({ searchParams }: { searchParams: any }) {
 }
 
 export default function SearchPage({ searchParams }: { searchParams: any }) {
-  const results = [];
-  const query = searchParams.q
-    .replaceAll(" ", "")
-    .toLowerCase()
-    .replace(/services?/g, "");
-  const matches = cleaningServices.filter((service) =>
-    service.tags.includes(query),
-  );
-  results.push(...matches);
+  const results: any[] = [];
+  const query = searchParams.q.toLowerCase().split(" ");
+  cleaningServices.forEach((service) => {
+    var c = 0;
+    query.forEach((item: string) => {
+      if (service.tags.includes(item)) c++;
+    });
+    if (c > 0) results.push({ service: service, count: c });
+  });
+  results.sort((a, b) => {
+    return b.count - a.count;
+  });
 
   return (
     <>
@@ -49,7 +52,7 @@ export default function SearchPage({ searchParams }: { searchParams: any }) {
           <Search />
           <div className="mt-20 grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
             {results.map((service, i) => (
-              <SubServiceCard key={i} service={service} />
+              <SubServiceCard key={i} service={service.service} />
             ))}
           </div>
           {results.length === 0 && (

@@ -32,6 +32,7 @@ export default function Front() {
           src={main}
           width={500}
           height={500}
+          quality={96}
           alt="Worker Image"
           sizes="100vw"
           priority

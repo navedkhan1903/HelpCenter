@@ -13,6 +13,13 @@ export const applianceCleaningMetadata = generateMetadata(
   appliance,
 );
 
+export const bookedServicesMetadata = generateMetadata(
+  "Booked Services - HelpCenter",
+  "Your schedule's so full, it's like your appointments booked themselves! Check out your service spree!",
+  "https://helpcenter-web.vercel.app/booked-services",
+  main,
+);
+
 export const carpetCleaningMetadata = generateMetadata(
   "Carpet Cleaning - HelpCenter",
   "Refresh your carpets with professional services: deep steam cleaning, stain removal, shampooing, deodorizing, and protection.",
@@ -52,7 +59,7 @@ export const mainMetadata = generateMetadata(
   "HelpCenter - On-Demand Services",
   "Your wish, our command! Get what you need, when you need it, with just a click. Experience convenience like never before!",
   "https://helpcenter-web.vercel.app",
-  home,
+  main,
 );
 
 export const profileMetadata = generateMetadata(
@@ -73,5 +80,5 @@ export const signupMetadata = generateMetadata(
   "Sign Up - HelpCenter",
   "Unlock a universe of tailored on-demand services by seamlessly signing up – your journey to personalized convenience begins here.",
   "https://helpcenter-web.vercel.app/signup",
-  home,
+  main,
 );

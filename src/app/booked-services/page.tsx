@@ -1,6 +1,9 @@
 import Session from "@/components/shared/Session";
 import Wrapper from "@/components/shared/Wrapper";
 import Client from "@/components/booked-services/Client";
+import { bookedServicesMetadata } from "@/utils/metadata";
+
+export const metadata = bookedServicesMetadata;
 
 export default function BookedServices() {
   return (

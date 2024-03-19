@@ -7,7 +7,7 @@ export async function GET(req: NextRequest, context: any) {
     await connect();
     await Address.deleteOne({ id: context.params.id });
 
-    NextResponse.json({ message: "Address successfully deleted" });
+    return NextResponse.json({ message: "Address successfully deleted" });
   } catch {
     return NextResponse.error();
   }
