@@ -19,7 +19,7 @@ export default function LoginClient() {
   const [pass, setPass] = useState("");
   const [name, setName] = useState("");
 
-  const { loading, handleSignup } = useSignup();
+  const { signupLoading, handleRedirect } = useSignup(name, email, pass);
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function LoginClient() {
         placeholder="Full Name"
         onChange={(e) => setName(e.target.value)}
         onKeyDown={(e) => {
-          e.key === "Enter" && handleSignup(name, email, pass);
+          e.key === "Enter" && handleRedirect();
         }}
       />
 
@@ -40,7 +40,7 @@ export default function LoginClient() {
         placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
         onKeyDown={(e) => {
-          e.key === "Enter" && handleSignup(name, email, pass);
+          e.key === "Enter" && handleRedirect();
         }}
       />
 
@@ -50,7 +50,7 @@ export default function LoginClient() {
         placeholder="Password"
         onChange={(e) => setPass(e.target.value)}
         onKeyDown={(e) => {
-          e.key === "Enter" && handleSignup(name, email, pass);
+          e.key === "Enter" && handleRedirect();
         }}
         isVisible={
           passVisible ? (
@@ -63,9 +63,9 @@ export default function LoginClient() {
       />
 
       <AuthBtn
-        loading={loading}
+        loading={signupLoading}
         label="Sign Up"
-        onClick={() => handleSignup(name, email, pass)}
+        onClick={() => handleRedirect()}
       />
     </>
   );

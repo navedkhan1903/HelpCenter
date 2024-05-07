@@ -17,7 +17,7 @@ export default function LoginClient() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  const { loading, handleLogin } = useLogin();
+  const { loginLoading, handleRedirect } = useLogin(email, pass);
 
   return (
     <>
@@ -28,7 +28,7 @@ export default function LoginClient() {
         placeholder="Email"
         onChange={(e) => setEmail(e.target.value)}
         onKeyDown={(e) => {
-          e.key === "Enter" && handleLogin(email, pass);
+          e.key === "Enter" && handleRedirect();
         }}
       />
 
@@ -38,7 +38,7 @@ export default function LoginClient() {
         placeholder="Password"
         onChange={(e) => setPass(e.target.value)}
         onKeyDown={(e) => {
-          e.key === "Enter" && handleLogin(email, pass);
+          e.key === "Enter" && handleRedirect();
         }}
         isVisible={
           passVisible ? (
@@ -54,11 +54,7 @@ export default function LoginClient() {
         Forgot Password?
       </button>
 
-      <AuthBtn
-        loading={loading}
-        label="Login"
-        onClick={() => handleLogin(email, pass)}
-      />
+      <AuthBtn loading={loginLoading} label="Login" onClick={handleRedirect} />
     </>
   );
 }

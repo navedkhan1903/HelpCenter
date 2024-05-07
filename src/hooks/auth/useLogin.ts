@@ -1,18 +1,41 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { auth } from "@/utils/firebase";
+import { useDispatch } from "react-redux";
+import { setAuthInfo } from "@/store/authSlice";
 import { validateLogin } from "@/utils/functions";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter, useSearchParams } from "next/navigation";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 
-export default function useLogin() {
-  const [loading, setLoading] = useState(false);
+export default function useLogin(email: string, pass: string) {
+  const [loginLoading, setLoginLoading] = useState(false);
 
-  async function handleLogin(email: string, pass: string) {
-    setLoading(true);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
+  params.set("flow", "login");
+
+  async function handleLogin() {
+    setLoginLoading(true);
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
+      toast.success("Login Successful. Redirecting");
+    } catch (err: any) {
+      toast.error(err.message);
+    }
+    setLoginLoading(false);
+  }
+
+  async function handleRedirect() {
     if (validateLogin(email, pass)) {
+      setLoginLoading(true);
       try {
-        await signInWithEmailAndPassword(auth, email, pass);
-        toast.success("Login Successful. Redirecting");
+        await signInWithEmailAndPassword(auth, email, pass).then(() => {
+          signOut(auth);
+          dispatch(setAuthInfo({ email, pass }));
+          router.push(`/verify-otp?${params}`);
+        });
       } catch (err: any) {
         toast.error(
           err.code === "auth/invalid-credential"
@@ -20,9 +43,9 @@ export default function useLogin() {
             : err.message,
         );
       }
+      setLoginLoading(false);
     }
-    setLoading(false);
   }
 
-  return { loading, handleLogin };
+  return { loginLoading, handleLogin, handleRedirect };
 }

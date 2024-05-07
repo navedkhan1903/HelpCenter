@@ -2,23 +2,53 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { auth } from "@/utils/firebase";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
+import { setAuthInfo } from "@/store/authSlice";
+import { useSearchParams } from "next/navigation";
 import { validateSignup } from "@/utils/functions";
-import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signOut,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
-export default function useSignup() {
-  const [loading, setLoading] = useState(false);
+export default function useSignup(name: string, email: string, pass: string) {
+  const [signupLoading, setSignupLoading] = useState(false);
 
-  async function handleSignup(name: string, email: string, pass: string) {
-    setLoading(true);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
+  params.set("flow", "signup");
+
+  async function handleSignup() {
+    setSignupLoading(true);
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
+      toast.success("Login Successful. Redirecting");
+    } catch (err: any) {
+      toast.error(err.message);
+    }
+    setSignupLoading(false);
+  }
+
+  async function handleRedirect() {
     if (validateSignup(name, email, pass)) {
+      setSignupLoading(true);
       try {
-        const res = await createUserWithEmailAndPassword(auth, email, pass);
-        await axios.post("/api/signup", {
-          uid: res.user.uid,
-          name,
-          email,
-        });
-        toast.success("Sign Up Successful. Redirecting");
+        await createUserWithEmailAndPassword(auth, email, pass).then(
+          async (res) => {
+            signOut(auth);
+            await axios.post("/api/signup", {
+              uid: res.user.uid,
+              name,
+              email,
+            });
+            dispatch(setAuthInfo({ name, email, pass }));
+            router.push(`/verify-otp?${params}`);
+          },
+        );
       } catch (err: any) {
         toast.error(
           err.code === "auth/email-already-in-use"
@@ -27,9 +57,9 @@ export default function useSignup() {
         );
         signOut(auth);
       }
+      setSignupLoading(false);
     }
-    setLoading(false);
   }
 
-  return { loading, handleSignup };
+  return { signupLoading, handleSignup, handleRedirect };
 }

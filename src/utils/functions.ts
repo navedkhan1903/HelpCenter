@@ -137,3 +137,7 @@ export function generateMetadata(
     },
   };
 }
+
+export function createTimeoutPromise() {
+  return new Promise<void>((resolve) => setTimeout(() => resolve(), 1000));
+}

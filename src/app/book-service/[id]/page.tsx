@@ -26,7 +26,7 @@ export default function BookingPage({ params }: { params: any }) {
       <Session status="authenticated" path="/login">
         <div className="mt-[69.71px]">
           <Header service={staticServices[params.id]} />
-          <div className="mx-auto my-20 w-10/12 rounded-lg md:w-8/12 md:p-14 lg:w-6/12">
+          <div className="mx-auto my-20 w-10/12 md:w-8/12 lg:w-5/12">
             <ReduxProvider>
               <BookServiceClient service={staticServices[params.id].title} />
             </ReduxProvider>
