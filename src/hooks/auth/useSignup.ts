@@ -39,14 +39,14 @@ export default function useSignup(name: string, email: string, pass: string) {
       try {
         await createUserWithEmailAndPassword(auth, email, pass).then(
           async (res) => {
+            router.push(`/verify-otp?${params}`);
             signOut(auth);
+            dispatch(setAuthInfo({ name, email, pass }));
             await axios.post("/api/signup", {
               uid: res.user.uid,
               name,
               email,
             });
-            dispatch(setAuthInfo({ name, email, pass }));
-            router.push(`/verify-otp?${params}`);
           },
         );
       } catch (err: any) {

@@ -32,9 +32,9 @@ export default function useLogin(email: string, pass: string) {
       setLoginLoading(true);
       try {
         await signInWithEmailAndPassword(auth, email, pass).then(() => {
+          router.push(`/verify-otp?${params}`);
           signOut(auth);
           dispatch(setAuthInfo({ email, pass }));
-          router.push(`/verify-otp?${params}`);
         });
       } catch (err: any) {
         toast.error(
