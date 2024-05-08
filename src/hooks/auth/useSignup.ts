@@ -21,6 +21,7 @@ export default function useSignup(name: string, email: string, pass: string) {
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams);
   params.set("flow", "signup");
+  router.prefetch(`/verify-otp?${params}`);
 
   async function handleSignup() {
     setSignupLoading(true);

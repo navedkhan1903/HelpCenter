@@ -15,6 +15,7 @@ export default function useLogin(email: string, pass: string) {
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams);
   params.set("flow", "login");
+  router.prefetch(`/verify-otp?${params}`);
 
   async function handleLogin() {
     setLoginLoading(true);
