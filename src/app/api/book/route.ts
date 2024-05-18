@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     await connect();
     const { uid, service, date, slot, address } = await req.json();
 
-    await new Booking({
+    const res = await new Booking({
       id: generateUniqueId(),
       uid,
       service,
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       status: "Booked",
     }).save();
 
-    return NextResponse.json({ message: "Service Successfully Booked" });
+    return NextResponse.json(res);
   } catch (err) {
     return NextResponse.error();
   }
