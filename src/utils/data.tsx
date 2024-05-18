@@ -383,6 +383,7 @@ export const slotOptions = [
 ];
 
 export const activeStatusOptions = [
+  { label: "Initiated", value: "Initiated" },
   { label: "Booked", value: "Booked" },
   { label: "In Progress", value: "In Progress" },
   { label: "Finished", value: "Finished" },
@@ -390,6 +391,10 @@ export const activeStatusOptions = [
 ];
 
 export const statusColors: any = {
+  Initiated: {
+    color: "#334155",
+    bg: "#f1f5f9",
+  },
   Booked: {
     color: "#0f766e",
     bg: "#ccfbf1",

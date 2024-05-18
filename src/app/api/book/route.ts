@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
       slot,
       address,
       time: new Date(),
-      status: "Booked",
+      status: "Initiated",
     }).save();
 
     return NextResponse.json(res);
