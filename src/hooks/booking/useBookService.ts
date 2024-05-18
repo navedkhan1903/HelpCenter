@@ -9,7 +9,7 @@ export default function useBookService() {
 
   async function fetchBooking(id: string) {
     const res = await fetch(`/api/booking/${id}`).then((res) => res.json());
-    if (res.status != "In Progress") await fetchBooking(res.id);
+    if (res.status != "Booked") await fetchBooking(res.id);
     return;
   }
 

@@ -5,7 +5,11 @@ import Image from "next/image";
 export default function ServiceCard({ service }: { service: any }) {
   return (
     <Link href={service.href}>
-      <div className="mb-10 flex-1 duration-200 hover:scale-105 hover:cursor-pointer">
+      <div
+        className={`mb-10 flex-1 duration-200 hover:scale-105 ${
+          service.locked ? "locked" : "hover:cursor-pointer"
+        }`}
+      >
         <Image
           className="rounded-t-3xl"
           src={service.image}

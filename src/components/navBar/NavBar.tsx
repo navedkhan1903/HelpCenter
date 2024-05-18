@@ -40,9 +40,13 @@ export default function NavBar() {
           </Link>
         </div>
         <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 transform gap-[3.3vw] md:flex">
-          <NavItem title="About Us" href="/about-us" />
-          <NavItem title="Services" href="/services" />
-          <NavItem title="Sell your services" href="/sell-services" />
+          <NavItem title="About Us" href="#" locked={true} />
+          <NavItem title="Services" href="/services" locked={false} />
+          <NavItem
+            title="Sell your services"
+            href="https://helpcenter-provider.vercel.app"
+            locked={false}
+          />
         </div>
 
         {user ? (

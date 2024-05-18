@@ -109,6 +109,7 @@ export const services = [
     ratingCount: "4.9k",
     rating: 5,
     href: "services/home",
+    locked: false,
   },
   {
     image: laundary,
@@ -117,7 +118,8 @@ export const services = [
     quality: 95,
     ratingCount: "2.7k",
     rating: 4,
-    href: "services/laundry",
+    href: "#",
+    locked: true,
   },
   {
     image: learning,
@@ -126,7 +128,8 @@ export const services = [
     quality: 93,
     ratingCount: "8.2k",
     rating: 5,
-    href: "services/tuition",
+    href: "#",
+    locked: true,
   },
   {
     image: beauty,
@@ -135,7 +138,8 @@ export const services = [
     quality: 93,
     ratingCount: "5.6k",
     rating: 4,
-    href: "services/beauty",
+    href: "#",
+    locked: true,
   },
   {
     image: event,
@@ -144,7 +148,8 @@ export const services = [
     quality: 85,
     ratingCount: "2.3k",
     rating: 5,
-    href: "services/event",
+    href: "#",
+    locked: true,
   },
   {
     image: grocery,
@@ -153,7 +158,8 @@ export const services = [
     quality: 89,
     ratingCount: "6.2k",
     rating: 4,
-    href: "services/grocery",
+    href: "#",
+    locked: true,
   },
   {
     image: mechanic,
@@ -162,7 +168,8 @@ export const services = [
     quality: 95,
     ratingCount: "1.5k",
     rating: 5,
-    href: "services/vehicle",
+    href: "#",
+    locked: true,
   },
 ];
 
@@ -326,23 +333,36 @@ export const states = [
 ];
 
 export const navbarDropdown = [
-  { href: "/profile", icon: <AiOutlineUser size={18} />, label: "My Profile" },
+  {
+    href: "/profile",
+    icon: <AiOutlineUser size={18} />,
+    label: "My Profile",
+    locked: false,
+  },
   {
     href: "/booked-services",
     icon: <HiOutlineWrenchScrewdriver size={18} />,
     label: "Booked Services",
+    locked: false,
   },
-  { href: "/saved", icon: <BsBookmark size={18} />, label: "Saved Services" },
   {
-    href: "/notifications",
+    href: "/#",
+    icon: <BsBookmark size={18} />,
+    label: "Saved Services",
+    locked: true,
+  },
+  {
+    href: "/#",
     icon: <AiOutlineBell size={18} />,
     label: "Notifications",
+    locked: true,
   },
   {
     onClick: () => signOut(auth),
     href: "/",
     icon: <AiOutlineLogout size={18} />,
     label: "Sign out",
+    locked: false,
   },
 ];
 
@@ -422,6 +442,7 @@ export const homeServices = [
     ratingCount: "4.9k",
     rating: 5,
     href: "home/cleaning",
+    locked: false,
   },
   {
     image: handyman,
@@ -430,7 +451,8 @@ export const homeServices = [
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home/handyman",
+    href: "#",
+    locked: true,
   },
   {
     image: home_improvement,
@@ -439,7 +461,8 @@ export const homeServices = [
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home/home-improvement",
+    href: "#",
+    locked: true,
   },
   {
     image: garden,
@@ -448,7 +471,8 @@ export const homeServices = [
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home/gardening",
+    href: "#",
+    locked: true,
   },
   {
     image: maintainance,
@@ -457,7 +481,8 @@ export const homeServices = [
     quality: 93,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home/maintainance",
+    href: "#",
+    locked: true,
   },
   {
     image: tech,
@@ -466,7 +491,8 @@ export const homeServices = [
     quality: 93,
     ratingCount: "4.9k",
     rating: 5,
-    href: "home/tech",
+    href: "#",
+    locked: true,
   },
 ];
 

@@ -5,3 +5,7 @@
 .btn {
   @apply flex items-center justify-center rounded-md px-6 py-3 text-sm font-semibold duration-200;
 }
+
+.locked {
+  @apply cursor-not-allowed opacity-50;
+}
