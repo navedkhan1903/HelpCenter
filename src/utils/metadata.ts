@@ -62,13 +62,6 @@ export const mainMetadata = generateMetadata(
   main,
 );
 
-export const profileMetadata = generateMetadata(
-  "My Profile - HelpCenter",
-  "Bringing convenience to your doorstep – because life's too short for waiting in line!",
-  "https://helpcenter-web.vercel.app/profile",
-  main,
-);
-
 export const servicesMetadata = generateMetadata(
   "Our Services - HelpCenter",
   "Swift solutions tailored to your needs – On-demand excellence, always at your fingertips.",

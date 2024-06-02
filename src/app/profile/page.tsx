@@ -1,11 +1,8 @@
 import { Toaster } from "react-hot-toast";
 import Session from "@/components/shared/Session";
 import Wrapper from "@/components/shared/Wrapper";
-import { profileMetadata } from "@/utils/metadata";
 import ReduxProvider from "@/components/shared/ReduxProvider";
 import ProfileClient from "@/components/profile/ProfileClient";
-
-export const metadata = profileMetadata;
 
 export default function Profile() {
   return (

@@ -31,6 +31,21 @@ import carpet_cleaning from "../../public/carpet_cleaning.jpg";
 import home_improvement from "../../public/home_improvement.jpg";
 import appliance_cleaning from "../../public/appliance_cleaning.jpg";
 import { AiOutlineUser, AiOutlineLogout, AiOutlineBell } from "react-icons/ai";
+import electrical_services from "../../public/electrical_services.jpg";
+import plumbing_services from "../../public/plumbing_services.jpg";
+import carpentry_services from "../../public/carpentry_services.jpg";
+import painting_services from "../../public/painting_services.jpg";
+import flooring_installation from "../../public/flooring_installation.jpg";
+import home_renovation from "../../public/home_renovation.jpg";
+import lawn_mowing from "../../public/lawn_mowing.jpg";
+import garden_maintenance from "../../public/garden_maintenance.jpg";
+import landscape_design from "../../public/landscape_design.jpg";
+import network_setup from "../../public/network_setup.jpg";
+import smartphone_repair from "../../public/smartphone_repair.jpg";
+import computer_repair from "../../public/computer_repair.jpg";
+import roof_maintenance from "../../public/roof_maintenance.jpg";
+import gutter_cleaning from "../../public/gutter_cleaning.jpg";
+import hvac_maintenance from "../../public/hvac_maintenance.jpg";
 import {
   applianceCleaningMetadata,
   carpetCleaningMetadata,
@@ -447,52 +462,52 @@ export const homeServices = [
   {
     image: handyman,
     title: "Handyman Services",
-    desc: "Carpentry | Drywall Repair | Furniture Assembly",
+    desc: "Carpentry Services | Electrical Services | Plumbing Services",
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "#",
-    locked: true,
+    href: "home/handyman",
+    locked: false,
   },
   {
     image: home_improvement,
     title: "Home Improvement Services",
-    desc: "Bathroom Remodeling | Flooring Installation | Kitchen Renovation",
+    desc: "Flooring Installation | Home Renovation | Painting Services",
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "#",
-    locked: true,
+    href: "home/home-improvement",
+    locked: false,
   },
   {
     image: garden,
     title: "Lawn and Garden Services",
-    desc: "Garden Maintenance | Lawn Mowing | Landscaping",
+    desc: "Garden Maintenance | Landscape Design | Lawn Mowing",
     quality: 95,
     ratingCount: "4.9k",
     rating: 5,
-    href: "#",
-    locked: true,
+    href: "home/lawn-and-garden",
+    locked: false,
   },
   {
     image: maintainance,
     title: "Maintenance Services",
-    desc: "Appliance Repairs | Electrical Repairs | HVAC Services",
+    desc: "Gutter Cleaning | HVAC Maintenance | Roof Maintenance",
     quality: 93,
     ratingCount: "4.9k",
     rating: 5,
-    href: "#",
-    locked: true,
+    href: "home/maintenance",
+    locked: false,
   },
   {
     image: tech,
     title: "Tech Services",
-    desc: "Computer Repair | Home Network Setup | Smart Home Device Installation",
+    desc: "Computer Repair | Network Setup and Configuration | Smartphone Repair",
     quality: 93,
     ratingCount: "4.9k",
     rating: 5,
-    href: "#",
-    locked: true,
+    href: "home/tech",
+    locked: false,
   },
 ];
 
@@ -553,10 +568,331 @@ export const cleaningServices = [
   },
 ];
 
-export const staticServices: { [key: string]: any } = {
+export const handymanServices = [
+  {
+    title: "Carpentry Services",
+    image: carpentry_services,
+    quality: 91,
+    price: "₹400 - ₹1500",
+    rating: 4,
+    ratingCount: "120",
+    time: "2-5h",
+    services: [
+      "Furniture Assembly",
+      "Custom Shelving Installation",
+      "Door and Window Repair",
+      "Deck and Patio Construction",
+      "Wood Floor Refinishing",
+    ],
+    desc: "Enhance your home with skilled carpentry: furniture assembly, custom shelving, door and window repair, deck construction, and floor refinishing.",
+    tags: "carpentry services furniture assembly custom shelving installation door window repair deck patio construction wood floor refinishing quality price rating count efficient professional reliable experienced skilled affordable quick convenient certified licensed repair maintenance home household carpentry woodwork upgrade expert craftsmanship solution detail precision building installation durable",
+  },
+  {
+    title: "Electrical Services",
+    image: electrical_services,
+    quality: 94,
+    price: "₹300 - ₹1000",
+    rating: 4,
+    ratingCount: "150",
+    time: "1-3h",
+    services: [
+      "Light Fixture Installation",
+      "Electrical Outlet Repair",
+      "Ceiling Fan Installation",
+      "Circuit Breaker Replacement",
+      "Wiring and Rewiring",
+    ],
+    desc: "Ensure your home's electrical systems are safe and efficient with professional services: fixture installation, outlet repair, ceiling fan setup, and more.",
+    tags: "electrical services light fixture installation outlet repair ceiling fan circuit breaker wiring rewiring quality price rating count efficient professional reliable experienced safe skilled affordable quick convenient certified licensed repair maintenance home household electrical systems upgrade safety expert troubleshooting solution detail inspection installation energy efficient secure",
+  },
+  {
+    title: "Plumbing Services",
+    image: plumbing_services,
+    quality: 91,
+    price: "₹250 - ₹1200",
+    rating: 5,
+    ratingCount: "180",
+    time: "1-2h",
+    services: [
+      "Leak Detection and Repair",
+      "Pipe Installation and Repair",
+      "Toilet Repair and Installation",
+      "Water Heater Maintenance",
+      "Drain Cleaning",
+    ],
+    desc: "Resolve plumbing issues with expert services: leak detection, pipe repair, toilet maintenance, water heater care, and drain cleaning.",
+    tags: "plumbing services leak detection repair pipe installation toilet maintenance water heater drain cleaning quality price rating count efficient professional reliable experienced skilled affordable quick convenient certified licensed repair maintenance home household plumbing systems upgrade safety expert troubleshooting solution detail inspection cleaning unclog blockage secure flow drainage",
+  },
+];
+
+export const homeImprovementServices = [
+  {
+    title: "Flooring Installation",
+    image: flooring_installation,
+    quality: 97,
+    price: "₹1500 - ₹6000",
+    rating: 4.8,
+    ratingCount: "120",
+    time: "6-10h",
+    services: [
+      "Hardwood Floor Installation",
+      "Tile Floor Installation",
+      "Laminate Floor Installation",
+      "Vinyl Floor Installation",
+      "Carpet Floor Installation",
+    ],
+    desc: "Upgrade your floors with our expert installation services: hardwood, tile, laminate, vinyl, and carpet flooring.",
+    tags: "flooring installation hardwood tile laminate vinyl carpet professional quality price rating count home improvement skilled experienced efficient thorough reliable durable stylish aesthetic renovation upgrade new floors polished smooth seamless eco-friendly affordable fast convenient satisfaction detail expert craftsmanship residential commercial interior design",
+  },
+  {
+    title: "Home Renovation",
+    image: home_renovation,
+    quality: 90,
+    price: "₹5000 - ₹20000",
+    rating: 4.2,
+    ratingCount: "80",
+    time: "1-2 weeks",
+    services: [
+      "Kitchen Remodeling",
+      "Bathroom Remodeling",
+      "Room Additions",
+      "Basement Finishing",
+      "Attic Conversion",
+    ],
+    desc: "Transform your living space with our comprehensive renovation services: kitchen and bathroom remodeling, room additions, basement finishing, and attic conversion.",
+    tags: "home renovation remodeling kitchen bathroom room addition basement finishing attic conversion quality price rating count home improvement professional skilled experienced efficient thorough reliable stylish modern upgrade renovation project interior design space transformation custom detailed planning execution craftsmanship satisfaction premium eco-friendly durable affordable",
+  },
+  {
+    title: "Painting Services",
+    image: painting_services,
+    quality: 87,
+    price: "₹1000 - ₹5000",
+    rating: 4.5,
+    ratingCount: "150",
+    time: "4-8h",
+    services: [
+      "Interior Wall Painting",
+      "Exterior Wall Painting",
+      "Ceiling Painting",
+      "Furniture Painting",
+      "Touch-Up and Finishing",
+    ],
+    desc: "Enhance the beauty of your home with our professional painting services: interior and exterior walls, ceilings, furniture, and touch-ups.",
+    tags: "painting services interior exterior wall ceiling furniture touch-up finishing quality price rating count home improvement professional efficient thorough skilled reliable affordable fast convenient eco-friendly vibrant colors fresh coat durable aesthetic renovation upgrade house refresh beautify stylish premium precise detailed neat clean smooth flawless protection sheen",
+  },
+];
+
+export const lawnAndGardenServices = [
+  {
+    title: "Garden Maintenance",
+    image: garden_maintenance,
+    quality: 92,
+    price: "₹400 - ₹1200",
+    rating: 5,
+    ratingCount: "180",
+    time: "2-3h",
+    services: [
+      "Pruning and Trimming",
+      "Weeding and Mulching",
+      "Planting and Transplanting",
+      "Soil Testing and Fertilization",
+      "Garden Cleanup",
+    ],
+    desc: "Enhance your garden with comprehensive maintenance: pruning, weeding, planting, soil care, and cleanup services.",
+    tags: "garden maintenance pruning trimming weeding mulching planting transplanting soil testing fertilization cleanup quality price rating services professional thorough efficient reliable experienced skilled eco-friendly effective fast convenient neat tidy healthy lush vibrant organized detailed garden yard landscaping seasonal routine care expert horticulture flora greenery",
+  },
+  {
+    title: "Landscape Design",
+    image: landscape_design,
+    quality: 86,
+    price: "₹2000 - ₹5000",
+    rating: 5,
+    ratingCount: "90",
+    time: "3-6h",
+    services: [
+      "Custom Landscape Plans",
+      "Plant Selection and Placement",
+      "Hardscaping Installation",
+      "Irrigation System Setup",
+      "Lighting Design",
+    ],
+    desc: "Transform your outdoor space with expert landscape design: custom plans, plant selection, hardscaping, irrigation, and lighting.",
+    tags: "landscape design custom plans plant selection placement hardscaping installation irrigation system setup lighting design quality price rating services professional thorough efficient reliable experienced skilled creative innovative eco-friendly effective fast convenient detailed artistic beautiful elegant sophisticated yard garden outdoor space transformation home improvement greenery aesthetics",
+  },
+  {
+    title: "Lawn Mowing",
+    image: lawn_mowing,
+    quality: 91,
+    price: "₹300 - ₹800",
+    rating: 4,
+    ratingCount: "150",
+    time: "1-2h",
+    services: [
+      "Grass Cutting",
+      "Edging and Trimming",
+      "Debris Removal",
+      "Weed Control",
+      "Lawn Aeration",
+    ],
+    desc: "Keep your lawn neat and healthy with expert mowing services: grass cutting, edging, debris removal, weed control, and aeration.",
+    tags: "lawn mowing grass cutting edging trimming debris removal weed control aeration quality price rating count services tidy neat maintenance upkeep professional efficient reliable thorough green lush healthy fresh organized polished eco-friendly effective fast convenient experienced skilled affordable routine seasonal home garden yard landscaping",
+  },
+];
+
+export const maintenanceServices = [
+  {
+    title: "Gutter Cleaning",
+    image: gutter_cleaning,
+    quality: 90,
+    price: "₹399 - ₹1200",
+    rating: 4.5,
+    ratingCount: "120",
+    time: "1-2h",
+    services: [
+      "Gutter Inspection",
+      "Debris Removal",
+      "Downspout Cleaning",
+      "Flushing",
+      "Minor Repairs",
+    ],
+    desc: "Maintain your gutter system's integrity: inspection, debris removal, downspout cleaning, flushing, and minor repairs.",
+    tags: "gutter cleaning inspection debris removal downspout flushing minor repairs quality price rating count services efficient reliable thorough affordable professional experienced certified trained effective quick convenient expert guttering gutter-system maintenance",
+  },
+  {
+    title: "HVAC Maintenance",
+    image: hvac_maintenance,
+    quality: 92,
+    price: "₹799 - ₹2500",
+    rating: 4,
+    ratingCount: "150",
+    time: "1-2h",
+    services: [
+      "Air Duct Cleaning",
+      "Filter Replacement",
+      "System Inspection and Tune-Up",
+      "Coil Cleaning",
+      "Fan Motor Lubrication",
+    ],
+    desc: "Keep your HVAC system running smoothly: air duct cleaning, filter replacement, system inspection, coil cleaning, and fan motor lubrication.",
+    tags: "hvac maintenance air-duct filter replacement system inspection tune-up coil cleaning fan-motor lubrication quality price rating count services efficient reliable thorough affordable professional experienced certified trained effective quick convenient expert",
+  },
+  {
+    title: "Roof Maintenance",
+    image: roof_maintenance,
+    quality: 77,
+    price: "₹899 - ₹3000",
+    rating: 4.2,
+    ratingCount: "100",
+    time: "2-3h",
+    services: [
+      "Roof Inspection",
+      "Shingle Replacement",
+      "Gutter Cleaning",
+      "Moss Removal",
+      "Sealing",
+    ],
+    desc: "Preserve the longevity of your roof: inspection, shingle replacement, gutter cleaning, moss removal, and sealing.",
+    tags: "roof maintenance inspection shingle replacement gutter cleaning moss removal sealing quality price rating count services efficient reliable thorough affordable professional experienced certified trained effective quick convenient expert roofing roof-system preservation longevity integrity upkeep",
+  },
+];
+
+export const techServices = [
+  {
+    title: "Computer Repair",
+    image: computer_repair,
+    quality: 92,
+    price: "₹499 - ₹2000",
+    rating: 4,
+    ratingCount: "150",
+    time: "1-3h",
+    services: [
+      "Hardware Troubleshooting",
+      "Software Installation and Configuration",
+      "Virus and Malware Removal",
+      "Data Recovery",
+      "System Tune-Up",
+    ],
+    desc: "Get your computer running smoothly with expert repair services: troubleshooting, software setup, virus removal, data recovery, and system optimization.",
+    tags: "computer repair troubleshooting hardware software installation configuration virus malware removal data recovery system tune-up quality price rating services efficient reliable experienced skilled certified quick convenient expert effective affordable trusted satisfaction",
+  },
+  {
+    title: "Network Setup and Configuration",
+    image: network_setup,
+    quality: 95,
+    price: "₹799 - ₹2500",
+    rating: 4.5,
+    ratingCount: "120",
+    time: "2-4h",
+    services: [
+      "Router Installation and Configuration",
+      "Network Security Setup",
+      "Wireless Network Optimization",
+      "LAN and WAN Configuration",
+      "Network Troubleshooting",
+    ],
+    desc: "Ensure seamless connectivity with professional network services: router setup, security configuration, wireless optimization, LAN/WAN setup, and troubleshooting.",
+    tags: "network setup configuration router installation security wireless LAN WAN troubleshooting quality price rating services efficient reliable experienced skilled certified quick convenient expert effective affordable trusted satisfaction",
+  },
+  {
+    title: "Smartphone Repair",
+    image: smartphone_repair,
+    quality: 91,
+    price: "₹299 - ₹1500",
+    rating: 4.5,
+    ratingCount: "100",
+    time: "1-2h",
+    services: [
+      "Screen Replacement",
+      "Battery Replacement",
+      "Charging Port Repair",
+      "Water Damage Repair",
+      "Software Troubleshooting",
+    ],
+    desc: "Restore your smartphone's functionality with professional repair services: screen and battery replacement, charging port repair, water damage recovery, and software troubleshooting.",
+    tags: "smartphone repair screen battery replacement charging port water damage software troubleshooting quality price rating services efficient reliable experienced skilled certified quick convenient expert effective affordable trusted satisfaction",
+  },
+];
+
+export const servicesList = [
+  { id: "appliance-cleaning" },
+  { id: "carpet-cleaning" },
+  { id: "house-cleaning" },
+  { id: "carpentry-services" },
+  { id: "electrical-services" },
+  { id: "plumbing-services" },
+  { id: "flooring-installation" },
+  { id: "home-renovation" },
+  { id: "painting-services" },
+  { id: "garden-maintenance" },
+  { id: "landscape-design" },
+  { id: "lawn-mowing" },
+  { id: "gutter-cleaning" },
+  { id: "hvac-maintenance" },
+  { id: "roof-maintenance" },
+  { id: "computer-repair" },
+  { id: "network-setup-and-configuration" },
+  { id: "smartphone-repair" },
+];
+
+export const servicesMap: { [key: string]: any } = {
   "appliance-cleaning": cleaningServices[0],
   "carpet-cleaning": cleaningServices[1],
   "house-cleaning": cleaningServices[2],
+  "carpentry-services": handymanServices[0],
+  "electrical-services": handymanServices[1],
+  "plumbing-services": handymanServices[2],
+  "flooring-installation": homeImprovementServices[0],
+  "home-renovation": homeImprovementServices[1],
+  "painting-services": homeImprovementServices[2],
+  "garden-maintenance": lawnAndGardenServices[0],
+  "landscape-design": lawnAndGardenServices[1],
+  "lawn-mowing": lawnAndGardenServices[2],
+  "gutter-cleaning": maintenanceServices[0],
+  "hvac-maintenance": maintenanceServices[1],
+  "roof-maintenance": maintenanceServices[2],
+  "computer-repair": techServices[0],
+  "network-setup-and-configuration": techServices[1],
+  "smartphone-repair": techServices[2],
 };
 
 export const staticMeta: any = {
