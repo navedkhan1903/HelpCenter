@@ -31,12 +31,8 @@ export default function SubServiceCard({ service }: { service: any }) {
           <button className="btn w-full">View Details</button>
           <Link
             href={`/book-service/${service.title
-              .split(" ")
-              .map(
-                (word: string) =>
-                  word.charAt(0).toLocaleLowerCase() + word.slice(1),
-              )
-              .join("-")}`}
+              .toLowerCase()
+              .replaceAll(" ", "-")}`}
             className="btn w-full bg-primary text-center hover:bg-primaryDark"
           >
             Book Service
